@@ -1,5 +1,6 @@
 import { assertEquals } from "https://deno.land/std@0.211.0/assert/mod.ts";
-import { Backend } from "./backend.ts";
+import { Backend, NameType } from "./backend.ts";
+import * as path from "https://deno.land/std@0.211.0/path/mod.ts";
 
 /*
 async function scaffoldTestFolder () {
@@ -38,6 +39,16 @@ Deno.test("backend", async (t) => {
     const backend = new Backend(testDir);
     await backend.init();
     return backend;
+  };
+
+  const writeTestNames = async (
+    b: Backend,
+    folderAndFileName: string,
+    names: string[],
+  ) => {
+    const rootFolder = b.getNameDir();
+    const file = path.join(rootFolder, folderAndFileName);
+    await Deno.writeTextFile(file, names.join("\n"));
   };
 
   await t.step("getLocations should handle a single location", async () => {
@@ -86,6 +97,68 @@ Deno.test("backend", async (t) => {
       "meta",
     ]);
     assertEquals(backend.getLocations(), []);
+  });
+
+  await t.step("search should return results for single loc.", async () => {
+    const backend = await createBackendWithLocations(["EGL England"]);
+    await writeTestNames(backend, "EGL England/EglN.txt", [
+      "Alexander",
+      "Murphy",
+    ]);
+    assertEquals(
+      (await backend.search("a", NameType.Name, "EGL")).map((sr) => sr.name),
+      ["Alexander"],
+    );
+  });
+
+  await t.step("search should return multiple expected results", async () => {
+    const backend = await createBackendWithLocations(["EGL England"]);
+    await writeTestNames(backend, "EGL England/EglN.txt", [
+      "Alexander",
+      "Allen",
+    ]);
+    assertEquals(
+      (await backend.search("e", NameType.Name, "EGL")).map((sr) => sr.name),
+      ["Alexander", "Allen"],
+    );
+  });
+
+  await t.step("search should return regex results", async () => {
+    const backend = await createBackendWithLocations(["EGL England"]);
+    await writeTestNames(backend, "EGL England/EglN.txt", [
+      "Alexander",
+      "Allen",
+    ]);
+    assertEquals(
+      (await backend.search("^A.*r$", NameType.Name, "EGL")).map((sr) =>
+        sr.name
+      ),
+      ["Alexander"],
+    );
+  });
+
+  await t.step("search should trim returned results", async () => {
+    const backend = await createBackendWithLocations(["EGL England"]);
+    await writeTestNames(backend, "EGL England/EglN.txt", [
+      "Alexander ",
+      "Allen",
+    ]);
+    assertEquals(
+      (await backend.search("A", NameType.Name, "EGL")).map((sr) => sr.name),
+      ["Alexander", "Allen"],
+    );
+  });
+
+  await t.step("search should NOT trim before search", async () => {
+    const backend = await createBackendWithLocations(["EGL England"]);
+    await writeTestNames(backend, "EGL England/EglN.txt", [
+      " Alexander",
+      "Allen",
+    ]);
+    assertEquals(
+      (await backend.search("^A", NameType.Name, "EGL")).map((sr) => sr.name),
+      ["Allen"],
+    );
   });
 
   await Deno.remove(rootTestDir, { recursive: true });

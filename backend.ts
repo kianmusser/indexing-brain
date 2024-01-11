@@ -23,13 +23,19 @@ interface SearchResult {
 class Backend {
   private nameDir: string;
   private locations: LocationWithFolder[];
+  private textDecoder: TextDecoder;
   constructor(nameDir: string) {
     this.nameDir = nameDir;
     this.locations = [];
+    this.textDecoder = new TextDecoder();
   }
 
   async init() {
     this.locations = await this.getLocationsWithFolders();
+  }
+
+  getNameDir() {
+    return this.nameDir;
   }
 
   private async getLocationsWithFolders(): Promise<LocationWithFolder[]> {
@@ -56,9 +62,43 @@ class Backend {
     });
   }
 
-  async search(): Promise<SearchResult[]> {
-    return [];
+  private getSpecificFile(locAbbr: string, type: NameType) {
+    const matchingLocations = this.locations.filter((lwf) =>
+      lwf.abbr === locAbbr
+    );
+    const curLoc = matchingLocations[0];
+
+    const locAbbrTitleized = locAbbr[0].toUpperCase() +
+      locAbbr.slice(1).toLowerCase();
+    const fileName = `${locAbbrTitleized}${type}.txt`;
+    return path.join(curLoc.folder, fileName);
+  }
+
+  private async specificSearch(
+    query: string,
+    type: NameType,
+    locAbbr: string,
+    maxCount: number,
+  ): Promise<SearchResult[]> {
+    const file = this.getSpecificFile(locAbbr, type);
+    const args = ["--crlf", "--max-count", String(maxCount), query, file];
+
+    const command = new Deno.Command("/usr/bin/rg", { args });
+
+    const { stdout } = await command.output();
+    const lines = this.textDecoder.decode(stdout).split("\n");
+    return lines.filter((l) => l !== "").map((l) => {
+      return { locAbbr, type, name: l.trim() };
+    });
+  }
+
+  async search(
+    query: string,
+    type: NameType,
+    locAbbr: string,
+  ): Promise<SearchResult[]> {
+    return await this.specificSearch(query, type, locAbbr, 10);
   }
 }
 
-export { Backend };
+export { Backend, NameType };
