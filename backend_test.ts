@@ -3,11 +3,6 @@ import { Backend } from "./backend.ts";
 
 /*
 async function scaffoldTestFolder () {
-    const rootDir = await Deno.makeTempDir();
-    const usaDir = `${rootDir}/USA United States of America`;
-    const englandDir = `${rootDir}/EGL England`;
-    await Promise.all([Deno.mkdir(usaDir), Deno.mkdir(englandDir)]);
-
     await Deno.writeTextFile(`${usaDir}/UsaN.txt`,
         `Alex
         Rebecca
@@ -32,7 +27,7 @@ async function scaffoldTestFolder () {
 }
 */
 
-Deno.test("locations", async (t) => {
+Deno.test("backend", async (t) => {
   const rootTestDir = await Deno.makeTempDir();
 
   const createBackendWithLocations = async (locations: string[]) => {
@@ -45,7 +40,7 @@ Deno.test("locations", async (t) => {
     return backend;
   };
 
-  await t.step("should handle a single location", async () => {
+  await t.step("getLocations should handle a single location", async () => {
     const backend = await createBackendWithLocations([
       "USA United States of America",
     ]);
@@ -55,7 +50,7 @@ Deno.test("locations", async (t) => {
     }]);
   });
 
-  await t.step("should handle multiple locations", async () => {
+  await t.step("getLocations should handle multiple locations", async () => {
     const backend = await createBackendWithLocations([
       "USA United States of America",
       "EGL England",
@@ -68,7 +63,7 @@ Deno.test("locations", async (t) => {
     ]);
   });
 
-  await t.step("should handle trailing spaces", async () => {
+  await t.step("getLocations should handle trailing spaces", async () => {
     const backend = await createBackendWithLocations([
       "EGL England ",
     ]);
@@ -77,7 +72,7 @@ Deno.test("locations", async (t) => {
     ]);
   });
 
-  await t.step("should handle multiple spaces", async () => {
+  await t.step("getLocations should handle multiple spaces", async () => {
     const backend = await createBackendWithLocations([
       "USA United States  of America",
     ]);
@@ -86,7 +81,7 @@ Deno.test("locations", async (t) => {
     ]);
   });
 
-  await t.step("should ignore folders without a name", async () => {
+  await t.step("getLocations should ignore folders w/o name", async () => {
     const backend = await createBackendWithLocations([
       "meta",
     ]);

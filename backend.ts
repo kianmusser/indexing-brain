@@ -8,6 +8,18 @@ interface LocationWithFolder extends Location {
   folder: string;
 }
 
+enum NameType {
+  Name = "N",
+  Place = "P",
+  Other = "O",
+}
+
+interface SearchResult {
+  locAbbr: string;
+  type: NameType;
+  name: string;
+}
+
 class Backend {
   private nameDir: string;
   private locations: LocationWithFolder[];
@@ -35,10 +47,17 @@ class Backend {
     }
     return locations;
   }
+
+  // public
+
   getLocations(): Location[] {
     return this.locations.map((lwf) => {
       return { name: lwf.name, abbr: lwf.abbr };
     });
+  }
+
+  async search(): Promise<SearchResult[]> {
+    return [];
   }
 }
 
