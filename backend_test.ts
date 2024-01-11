@@ -40,14 +40,16 @@ Deno.test("locations", async (t) => {
     Promise.all(locations.map((curLoc) => {
       return Deno.mkdir(`${testDir}/${curLoc}`);
     }));
-    return new Backend(testDir);
+    const backend = new Backend(testDir);
+    await backend.init();
+    return backend;
   };
 
   await t.step("should handle a single location", async () => {
     const backend = await createBackendWithLocations([
       "USA United States of America",
     ]);
-    assertEquals(await backend.getLocations(), [{
+    assertEquals(backend.getLocations(), [{
       abbr: "USA",
       name: "United States of America",
     }]);
@@ -59,7 +61,7 @@ Deno.test("locations", async (t) => {
       "EGL England",
       "CA Canada",
     ]);
-    assertEquals(await backend.getLocations(), [
+    assertEquals(backend.getLocations(), [
       { abbr: "CA", name: "Canada" },
       { abbr: "EGL", name: "England" },
       { abbr: "USA", name: "United States of America" },
@@ -70,7 +72,7 @@ Deno.test("locations", async (t) => {
     const backend = await createBackendWithLocations([
       "EGL England ",
     ]);
-    assertEquals(await backend.getLocations(), [
+    assertEquals(backend.getLocations(), [
       { abbr: "EGL", name: "England" },
     ]);
   });
@@ -79,7 +81,7 @@ Deno.test("locations", async (t) => {
     const backend = await createBackendWithLocations([
       "USA United States  of America",
     ]);
-    assertEquals(await backend.getLocations(), [
+    assertEquals(backend.getLocations(), [
       { abbr: "USA", name: "United States of America" },
     ]);
   });
@@ -88,7 +90,7 @@ Deno.test("locations", async (t) => {
     const backend = await createBackendWithLocations([
       "meta",
     ]);
-    assertEquals(await backend.getLocations(), []);
+    assertEquals(backend.getLocations(), []);
   });
 
   await Deno.remove(rootTestDir, { recursive: true });
