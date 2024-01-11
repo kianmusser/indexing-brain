@@ -66,5 +66,30 @@ Deno.test("locations", async (t) => {
     ]);
   });
 
+  await t.step("should handle trailing spaces", async () => {
+    const backend = await createBackendWithLocations([
+      "EGL England ",
+    ]);
+    assertEquals(await backend.getLocations(), [
+      { abbr: "EGL", name: "England" },
+    ]);
+  });
+
+  await t.step("should handle multiple spaces", async () => {
+    const backend = await createBackendWithLocations([
+      "USA United States  of America",
+    ]);
+    assertEquals(await backend.getLocations(), [
+      { abbr: "USA", name: "United States of America" },
+    ]);
+  });
+
+  await t.step("should ignore folders without a name", async () => {
+    const backend = await createBackendWithLocations([
+      "meta",
+    ]);
+    assertEquals(await backend.getLocations(), []);
+  });
+
   await Deno.remove(rootTestDir, { recursive: true });
 });

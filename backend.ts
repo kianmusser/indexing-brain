@@ -9,9 +9,11 @@ class Backend {
     for await (const dirEntry of Deno.readDir(this.nameDir)) {
       if (dirEntry.isDirectory) {
         const pieces = dirEntry.name.split(" ");
-        const abbr = pieces[0];
-        const name = pieces.slice(1).join(" ");
-        locations.push({ abbr, name });
+        if (pieces.length > 1) {
+          const abbr = pieces[0];
+          const name = pieces.slice(1).filter((p) => p !== "").join(" ");
+          locations.push({ abbr, name });
+        }
       }
     }
     return locations;
