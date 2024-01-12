@@ -3,32 +3,6 @@ import { Backend, MultipleLocationsError, NameType } from "./backend.ts";
 import * as path from "https://deno.land/std@0.211.0/path/mod.ts";
 import { fail } from "https://deno.land/std@0.211.0/assert/fail.ts";
 
-/*
-async function scaffoldTestFolder () {
-    await Deno.writeTextFile(`${usaDir}/UsaN.txt`,
-        `Alex
-        Rebecca
-        Jimmy`
-    );
-    await Deno.writeTextFile(`${usaDir}/UsaP.txt`,
-        `Chicago
-        Detroit
-        New York City`
-    );
-    await Deno.writeTextFile(`${englandDir}/EglN.txt`,
-        `Alexander
-        Elizabeth
-        Matthias`
-    );
-    // should not show up in any search
-    await Deno.writeTextFile(`${englandDir}/EglA.txt`,
-        `Alexander
-        Elizabeth
-        Matthias`
-    );
-}
-*/
-
 Deno.test("backend", async (t) => {
   const rootTestDir = await Deno.makeTempDir();
 
