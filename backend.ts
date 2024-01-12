@@ -20,6 +20,20 @@ interface SearchResult {
   name: string;
 }
 
+class LocationNotFoundError extends Error {
+  constructor(invalidLocAbbr: string) {
+    super(`Location not found: '${invalidLocAbbr}'`);
+    this.name = "LocationNotFoundError";
+  }
+}
+
+class MultipleLocationsError extends Error {
+  constructor(invalidLocAbbr: string) {
+    super(`Multiple locations with identical abbr found: '${invalidLocAbbr}'`);
+    this.name = "LocationNotFoundError";
+  }
+}
+
 class Backend {
   private nameDir: string;
   private locations: LocationWithFolder[];
@@ -32,6 +46,17 @@ class Backend {
 
   async init() {
     this.locations = await this.getLocationsWithFolders();
+
+    /*
+    const setOfLocAbbrs = new Set(this.locations.map((lwf) => lwf.abbr));
+    this.locations.forEach((lwf) => {
+      if (setOfLocAbbrs.has(lwf.abbr)) {
+        setOfLocAbbrs.delete(lwf.abbr);
+      } else {
+        throw new MultipleLocationsError(lwf.abbr);
+      }
+    });
+    */
   }
 
   getNameDir() {
@@ -66,6 +91,11 @@ class Backend {
     const matchingLocations = this.locations.filter((lwf) =>
       lwf.abbr === locAbbr
     );
+    if (matchingLocations.length === 0) {
+      throw new LocationNotFoundError(locAbbr);
+    } else if (matchingLocations.length > 1) {
+      throw new MultipleLocationsError(locAbbr);
+    }
     const curLoc = matchingLocations[0];
 
     const locAbbrTitleized = locAbbr[0].toUpperCase() +
@@ -80,7 +110,16 @@ class Backend {
     locAbbr: string,
     maxCount: number,
   ): Promise<SearchResult[]> {
-    const file = this.getSpecificFile(locAbbr, type);
+    let file: string;
+    try {
+      file = this.getSpecificFile(locAbbr, type);
+    } catch (err) {
+      if (err instanceof LocationNotFoundError) {
+        return [];
+      } else {
+        throw err;
+      }
+    }
     const args = ["--crlf", "--max-count", String(maxCount), query, file];
 
     const command = new Deno.Command("/usr/bin/rg", { args });

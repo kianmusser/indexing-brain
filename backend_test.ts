@@ -1,6 +1,8 @@
 import { assertEquals } from "https://deno.land/std@0.211.0/assert/mod.ts";
 import { Backend, NameType } from "./backend.ts";
 import * as path from "https://deno.land/std@0.211.0/path/mod.ts";
+import { assertRejects } from "https://deno.land/std@0.211.0/assert/assert_rejects.ts";
+import { assertIsError } from "https://deno.land/std@0.211.0/assert/assert_is_error.ts";
 
 /*
 async function scaffoldTestFolder () {
@@ -160,6 +162,34 @@ Deno.test("backend", async (t) => {
       ["Allen"],
     );
   });
+
+  await t.step("search should return 0 res on unknown country", async () => {
+    const backend = await createBackendWithLocations(["EGL England"]);
+    await writeTestNames(backend, "EGL England/EglN.txt", [
+      "Alexander",
+      "Allen",
+    ]);
+    assertEquals(
+      (await backend.search("^A", NameType.Name, "CAN")).map((sr) => sr.name),
+      [],
+    );
+  });
+
+  await t.step("search should return 0 res on no file country", async () => {
+    const backend = await createBackendWithLocations(["EGL England"]);
+    assertEquals(
+      (await backend.search("^A", NameType.Name, "EGL")).map((sr) => sr.name),
+      [],
+    );
+  });
+
+  /*
+  await t.step("backend should err when >1 loc. same abbr", async () => {
+    assertRejects(() =>
+      createBackendWithLocations(["EGL England", "EGL English"])
+    );
+  });
+  */
 
   await Deno.remove(rootTestDir, { recursive: true });
 });
