@@ -28,8 +28,10 @@ class LocationNotFoundError extends Error {
 }
 
 class MultipleLocationsError extends Error {
-  constructor(invalidLocAbbr: string) {
-    super(`Multiple locations with identical abbr found: '${invalidLocAbbr}'`);
+  constructor(nameOrAbbr: string, invalidLocAbbr: string) {
+    super(
+      `Multiple locations with identical ${nameOrAbbr} found: '${invalidLocAbbr}'`,
+    );
     this.name = "LocationNotFoundError";
   }
 }
@@ -47,16 +49,22 @@ class Backend {
   async init() {
     this.locations = await this.getLocationsWithFolders();
 
-    /*
+    // check for duplicate country abbreviations and names
     const setOfLocAbbrs = new Set(this.locations.map((lwf) => lwf.abbr));
+    const setOfLocNames = new Set(this.locations.map((lwf) => lwf.name));
+
     this.locations.forEach((lwf) => {
       if (setOfLocAbbrs.has(lwf.abbr)) {
         setOfLocAbbrs.delete(lwf.abbr);
       } else {
-        throw new MultipleLocationsError(lwf.abbr);
+        throw new MultipleLocationsError("abbr", lwf.abbr);
+      }
+      if (setOfLocNames.has(lwf.name)) {
+        setOfLocNames.delete(lwf.name);
+      } else {
+        throw new MultipleLocationsError("name", lwf.name);
       }
     });
-    */
   }
 
   getNameDir() {
@@ -94,7 +102,7 @@ class Backend {
     if (matchingLocations.length === 0) {
       throw new LocationNotFoundError(locAbbr);
     } else if (matchingLocations.length > 1) {
-      throw new MultipleLocationsError(locAbbr);
+      throw new MultipleLocationsError("abbr", locAbbr);
     }
     const curLoc = matchingLocations[0];
 
@@ -140,4 +148,4 @@ class Backend {
   }
 }
 
-export { Backend, NameType };
+export { Backend, MultipleLocationsError, NameType };

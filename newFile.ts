@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.211.0/assert/mod.ts";
-import { Backend, MultipleLocationsError, NameType } from "./backend.ts";
+import { Backend, NameType } from "./backend.ts";
 import * as path from "https://deno.land/std@0.211.0/path/mod.ts";
 import { fail } from "https://deno.land/std@0.211.0/assert/fail.ts";
 
@@ -28,7 +28,6 @@ async function scaffoldTestFolder () {
     );
 }
 */
-
 Deno.test("backend", async (t) => {
   const rootTestDir = await Deno.makeTempDir();
 
@@ -185,19 +184,6 @@ Deno.test("backend", async (t) => {
   await t.step("backend should err when >1 loc. same abbr", async () => {
     try {
       await createBackendWithLocations(["EGL England", "EGL English"]);
-    } catch (err) {
-      if (err instanceof MultipleLocationsError) {
-        return;
-      } else {
-        throw err;
-      }
-    }
-    fail("Backend should have thrown an error");
-  });
-
-  await t.step("backend should err when >1 loc. same name", async () => {
-    try {
-      await createBackendWithLocations(["EGL England", "EG England"]);
     } catch (err) {
       if (err instanceof MultipleLocationsError) {
         return;
