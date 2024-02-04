@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.211.0/assert/mod.ts";
-import { Backend, MultipleLocationsError, NameType } from "./backend.ts";
+import { Backend, MultipleLocationsError, NameType } from "./old_backend.ts";
 import * as path from "https://deno.land/std@0.211.0/path/mod.ts";
 import { fail } from "https://deno.land/std@0.211.0/assert/fail.ts";
 
@@ -83,6 +83,23 @@ Deno.test("backend", async (t) => {
     assertEquals(
       (await backend.search("a", NameType.Name, "EGL")).map((sr) => sr.name),
       ["Alexander"],
+    );
+  });
+
+  await t.step("search should fallback to all loc same type", async () => {
+    const backend = await createBackendWithLocations([
+      "EGL England",
+      "CAN Canada",
+    ]);
+    await writeTestNames(backend, "EGL England/EglN.txt", [
+      "Alexander",
+    ]);
+    await writeTestNames(backend, "CAN Canada/CanN.txt", [
+      "Allen",
+    ]);
+    assertEquals(
+      await backend.search("a", NameType.Name, "EGL"),
+      [{ locAbbr: "EGL", type: NameType.Place, name: "Alexander" }],
     );
   });
 
