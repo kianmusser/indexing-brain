@@ -44,8 +44,7 @@ class Server {
       const { abbr, name } = l;
       return { abbr, name };
     });
-    res.setHeader("Content-Type", "application/json");
-    res.send(JSON.stringify(locationsNoFolder));
+    res.send(locationsNoFolder);
   }
 
   async searchHandler(req, res) {
