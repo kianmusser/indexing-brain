@@ -2,8 +2,13 @@ import express from "express";
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import fs from "node:fs/promises";
+import { z } from "zod";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// adapted from https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript/64910248
+const titleCase = (str) => str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
+
 
 class Server {
   constructor(port, nameFolder) {
@@ -48,6 +53,28 @@ class Server {
   }
 
   async searchHandler(req, res) {
+    const locations = await this.getLocations();
+    const locAbbrs = locations.map((l) => l.abbr);
+    const searchParameters = z.object({
+      query: z.string(),
+      type: z.enum(["N", "P", "O"]),
+      loc: z.enum(locAbbrs),
+    });
+
+    let params;
+    try {
+      params = searchParameters.parse(req.query);
+    } catch (err) {
+      res.status(400);
+      res.send("invalid request");
+      return;
+    }
+
+    const curLoc = locations.filter((l) => l.abbr === params.loc)[0];
+    const curFileName = `${titleCase(curLoc.abbr)}${params.type}.txt`
+    const curFilePath = path.join(curLoc.folder, curFileName);
+    console.log(params, curFilePath);
+
     res.send("Search");
   }
 
