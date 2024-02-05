@@ -68,14 +68,16 @@ class Server {
     const proc = child_process.spawn("/usr/bin/rg", ["--crlf", "-H", "-m", count, query, ...files]);
     const output = await streamToString(proc.stdout);
     return output.split("\n").map((line) => {
-      const pieces = line.split(":");
+      const l = line.trim();
+      if (l === "") return undefined;
+      const pieces = l.split(":");
       const fileName = pieces.shift();
       const name = pieces.join(":").trim();
 
       const place = fileName.split("/").slice(-1)[0].slice(0, -5).toUpperCase();
       return { name, place };
 
-    });
+    }).filter((sr) => sr !== undefined);
   }
 
   async searchHandler(req, res) {
@@ -104,7 +106,6 @@ class Server {
     let results = [];
     const output = await this.search(params.query, [curFilePath], 100);
     results.push(...output);
-    console.log("output", output);
 
     res.send(results);
   }
