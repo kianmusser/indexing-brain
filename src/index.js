@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import fs from "node:fs/promises";
 import { z } from "zod";
 import child_process from "node:child_process";
+import cors from "cors";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -27,6 +28,8 @@ class Server {
     this.app = express();
     this.port = port;
     this.nameFolder = nameFolder;
+
+    this.app.use(cors());
 
     this.app.get("/", this.indexHandler.bind(this));
     this.app.get("/locations", this.locationHandler.bind(this));
@@ -107,7 +110,7 @@ class Server {
     const output = await this.search(params.query, [curFilePath], 100);
     results.push(...output);
 
-    res.send(results);
+    res.send({ specificResults: results });
   }
 
   log(...args) {

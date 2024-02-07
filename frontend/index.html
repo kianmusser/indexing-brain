@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Indexing-Brain</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module">
+      import { h, render } from "https://esm.sh/preact@10.19.2";
+      import htm from "https://esm.sh/htm@3.1.1";
+      const html = htm.bind(h);
+      import { useState, useEffect } from "https://esm.sh/preact@10.19.2/hooks";
+      import {
+        signal,
+        useSignal,
+        useComputed,
+        useSignalEffect,
+      } from "https://esm.sh/@preact/signals@1.2.2";
+
+      const apiServer = "http://devd.io:3000";
+
+      const SearchIcon = html`
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-search"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+          />
+        </svg>
+      `;
+
+      const CopyIcon = html`
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-copy"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+          />
+        </svg>
+      `;
+
+      const nameType = signal("N");
+      const curLocation = signal("");
+      const query = signal("");
+      const status = signal("ok"); // ok, loading, error
+
+      const locations = signal([]);
+      const specificResults = signal([]);
+
+      const search = async () => {
+        status.value = "loading";
+        console.log(nameType.value, curLocation.value, query.value);
+        const q = encodeURIComponent(query.value);
+        const type = encodeURIComponent(nameType.value);
+        const loc = encodeURIComponent(curLocation.value);
+        const url = `${apiServer}/search?query=${q}&type=${type}&loc=${loc}`;
+
+        const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+        await sleep(500);
+
+        const resp = await fetch(url);
+        if (resp.status !== 200) {
+          status.value = "error";
+          console.log("err", resp.status);
+        } else {
+          const j = await resp.json();
+          specificResults.value = j.specificResults;
+          status.value = "ok";
+        }
+      };
+
+      const Header = (props) => {
+        useEffect(async () => {
+          const resp = await fetch(`${apiServer}/locations`);
+          const body = await resp.json();
+          curLocation.value = "US";
+          locations.value = body;
+        }, []);
+
+        let searchButton;
+        if (status.value === "ok") {
+          searchButton = html`<button
+            type="button"
+            class="btn btn-primary"
+            onClick=${search}
+          >
+            ${SearchIcon}
+          </button>`;
+        } else {
+          searchButton = html`<button type="button" class="btn btn-warning">
+            <div class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </button>`;
+        }
+
+        return html`
+          <nav class="row navbar navbar-expand-lg bg-secondary">
+            <div class="container-fluid">
+              <form class="row">
+                <select
+                  class="col form-select"
+                  id="type"
+                  value=${nameType}
+                  onChange=${(e) => (nameType.value = e.target.value)}
+                >
+                  <option value="N">Names</option>
+                  <option value="P">Places</option>
+                  <option value="O">Other</option>
+                </select>
+                <select
+                  class="col form-select"
+                  id="loc"
+                  value=${curLocation}
+                  onChange=${(e) => (curLocation.value = e.target.value)}
+                >
+                  ${locations.value.map(
+                    (l) =>
+                      html`<option value=${l.abbr}>
+                        ${l.abbr} - ${l.name}
+                      </option>`
+                  )}
+                </select>
+                <div class="input-group col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="query"
+                    placeholder="Search"
+                    value=${query}
+                    onInput=${(e) => (query.value = e.target.value)}
+                  />
+                  ${searchButton}
+                </div>
+              </form>
+            </div>
+          </nav>
+        `;
+      };
+
+      const SearchResults = (props) => {
+        const createSearchResult = (props) => {
+          const isCopied = useSignal(false);
+          const copyButtonColor = useComputed(() =>
+            isCopied.value === true ? "btn-success" : "btn-primary"
+          );
+          const copyButtonText = useComputed(() =>
+            isCopied.value === true ? "Copied" : "Copy"
+          );
+          useSignalEffect(() => {
+            const s = status.value;
+            isCopied.value = false;
+          });
+          const copy = async () => {
+            isCopied.value = true;
+            console.log("implement copy for", props.name);
+          };
+          return html`
+            <div class="card m-1 hstack">
+              <div class="py-1 px-3">${props.place}</div>
+              <div class="vr my-2"></div>
+              <div class="card-body">${props.name}</div>
+              <div class="vr my-2"></div>
+              <button class="btn ${copyButtonColor.value} m-2" onClick=${copy}>
+                ${copyButtonText} ${CopyIcon}
+              </button>
+            </div>
+          `;
+        };
+        return html` <div class="col-8 mx-auto">
+          ${specificResults.value.map(createSearchResult)}
+        </div>`;
+      };
+
+      const App = (props) => html`<div
+        class="vh-100 container-fluid d-flex flex-column"
+      >
+        <${Header} />
+        <div class="flex-grow-1 row bg-body-tertiary">
+          <${SearchResults} />
+        </div>
+      </div>`;
+
+      render(html`<${App} />`, document.body);
+    </script>
+  </head>
+  <body></body>
+</html>
