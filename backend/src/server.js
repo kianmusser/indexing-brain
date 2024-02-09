@@ -19,32 +19,32 @@ const nameType = z.enum(["N", "P", "O"]);
 
 // adapted from https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript/64910248
 /**
- * 
- * @param {string} str 
+ *
+ * @param {string} str
  * @returns the titleized string
  */
-const titleCase = (str) => str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
-
+const titleCase = (str) =>
+  str.toLowerCase().replace(/\b\w/g, (s) => s.toUpperCase());
 
 // from https://stackoverflow.com/questions/10623798/how-do-i-read-the-contents-of-a-node-js-stream-into-a-string-variable
 /**
- * 
- * @param {Stream} stream 
+ *
+ * @param {Stream} stream
  */
 function streamToString(stream) {
   /** @type {Buffer[]} */
   const chunks = [];
-  return new Promise((/** @type {(value: string) => void} */ resolve, reject) => {
-    stream.on('data', (chunk) => chunks.push(Buffer.from(chunk)));
-    stream.on('error', (err) => reject(err));
-    stream.on('end', () => {
-      const str = Buffer.concat(chunks).toString("utf-8");
-      resolve(str);
-    });
-  })
+  return new Promise(
+    (/** @type {(value: string) => void} */ resolve, reject) => {
+      stream.on("data", (chunk) => chunks.push(Buffer.from(chunk)));
+      stream.on("error", (err) => reject(err));
+      stream.on("end", () => {
+        const str = Buffer.concat(chunks).toString("utf-8");
+        resolve(str);
+      });
+    },
+  );
 }
-
-
 
 class Server {
   #app;
@@ -52,9 +52,9 @@ class Server {
   #nameFolder;
   #maxResults;
   /**
-   * 
-   * @param {number} port 
-   * @param {string} nameFolder 
+   *
+   * @param {number} port
+   * @param {string} nameFolder
    */
   constructor(port, nameFolder) {
     this.#app = express();
@@ -70,9 +70,9 @@ class Server {
   }
 
   /**
-   * 
-   * @param {import("express").Request} _req 
-   * @param {import("express").Response} res 
+   *
+   * @param {import("express").Request} _req
+   * @param {import("express").Response} res
    */
   indexHandler(_req, res) {
     res.send("Indexing-Brain API Server");
@@ -85,20 +85,22 @@ class Server {
       .flatMap((d) => {
         const pieces = d.name.split(" ");
         if (pieces.length < 2) return [];
-        return [{
-          abbr: pieces[0],
-          name: pieces.slice(1).join(" "),
-          folder: path.join(d.path, d.name),
-        }];
+        return [
+          {
+            abbr: pieces[0],
+            name: pieces.slice(1).join(" "),
+            folder: path.join(d.path, d.name),
+          },
+        ];
       });
-      
+
     return locations;
   }
 
   /**
-   * 
-   * @param {import("express").Request} req 
-   * @param {import("express").Response} res 
+   *
+   * @param {import("express").Request} req
+   * @param {import("express").Response} res
    */
   async locationHandler(req, res) {
     const locations = await this.getLocations();
@@ -110,57 +112,73 @@ class Server {
   }
 
   /**
-   * @param {NameType} type 
-   * @param {string[]} locs 
+   * @param {NameType} type
+   * @param {string[]} locs
    */
   async #getFilePaths(type, locs) {
     const locations = await this.getLocations();
     const filePaths = locations
       .filter((l) => locs.indexOf(l.abbr) !== -1)
       .map((l) => {
-        const curFileName = `${titleCase(l.abbr)}${type}.txt`
+        const curFileName = `${titleCase(l.abbr)}${type}.txt`;
         return path.join(l.folder, curFileName);
       });
     return filePaths;
-  };
+  }
 
   /**
-   * @param {string} loc 
+   * @param {string} loc
    */
   async #getRelatedLocations(loc) {
-    const relatedLocationsFile = path.join(this.#nameFolder, "meta", "relatedLocations.txt")
-    const relatedLocationsTxt = await fs.readFile(relatedLocationsFile, {encoding: "utf-8"});
+    const relatedLocationsFile = path.join(
+      this.#nameFolder,
+      "meta",
+      "relatedLocations.txt",
+    );
+    const relatedLocationsTxt = await fs.readFile(relatedLocationsFile, {
+      encoding: "utf-8",
+    });
+    /**
+     * @type {Map<string, string[]>}
+     */
     const relatedLocations = new Map();
 
+    /** * @type {string | undefined} */
     let curRelatedLocation;
     for (const line of relatedLocationsTxt.split("\n")) {
       const abbr = line.trim();
       if (line[0] === " ") {
         if (curRelatedLocation === undefined) {
-          throw new Error("received a related location without knowing what it's related to");
-        }
-        if (relatedLocations.has(curRelatedLocation)) {
-          relatedLocations.set(curRelatedLocation, [...relatedLocations.get(curRelatedLocation), abbr]);
+          throw new Error(
+            "received a related location without knowing what it's related to",
+          );
         } else {
-          relatedLocations.set(curRelatedLocation, [abbr]);
+          const existingLocations = relatedLocations.get(curRelatedLocation);
+          if (existingLocations !== undefined) {
+            relatedLocations.set(curRelatedLocation, [
+              ...existingLocations,
+              abbr,
+            ]);
+          } else {
+            relatedLocations.set(curRelatedLocation, [abbr]);
+          }
+          curRelatedLocation = abbr;
         }
-      } else {
-        curRelatedLocation = abbr;
       }
-    }
 
-    if (relatedLocations.has(loc)) {
-      return relatedLocations.get(loc);
-    } else {
-      return [];
+      if (relatedLocations.has(loc)) {
+        return relatedLocations.get(loc);
+      } else {
+        return [];
+      }
     }
   }
 
   /**
-   * @param {string} query 
-   * @param {NameType} type 
-   * @param {string[]} locations 
-   * @param {number} count 
+   * @param {string} query
+   * @param {NameType} type
+   * @param {string[]} locations
+   * @param {number} count
    */
   async search(query, type, locations, count) {
     if (locations.length === 0) {
@@ -168,7 +186,14 @@ class Server {
     }
     const files = await this.#getFilePaths(type, locations);
     this.#log(`files:`, locations, files);
-    const proc = child_process.spawn("/usr/bin/rg", ["--crlf", "-H", "-m", count.toString(), query, ...files]);
+    const proc = child_process.spawn("/usr/bin/rg", [
+      "--crlf",
+      "-H",
+      "-m",
+      count.toString(),
+      query,
+      ...files,
+    ]);
     const output = await streamToString(proc.stdout);
     return output.split("\n").flatMap((line) => {
       const l = line.trim();
@@ -180,16 +205,13 @@ class Server {
 
       const place = fileName.split("/").slice(-1)[0].slice(0, -5).toUpperCase();
       return { name, place };
-
     });
   }
 
-
-
   /**
-   * 
-   * @param {import("express").Request} req 
-   * @param {import("express").Response} res 
+   *
+   * @param {import("express").Request} req
+   * @param {import("express").Response} res
    */
   async searchHandler(req, res) {
     const locations = await this.getLocations();
@@ -210,7 +232,6 @@ class Server {
       return;
     }
 
-
     const result = {
       /**
        * @type {Name[]}
@@ -223,17 +244,29 @@ class Server {
     };
 
     const numResultsLeft = () => {
-      return this.#maxResults - (result.specificResults.length + result.relatedResults.length);
-    }
+      return (
+        this.#maxResults -
+        (result.specificResults.length + result.relatedResults.length)
+      );
+    };
 
     // specific search
-    result.specificResults = await this.search(params.query, params.type, [params.loc], numResultsLeft());
+    result.specificResults = await this.search(
+      params.query,
+      params.type,
+      [params.loc],
+      numResultsLeft(),
+    );
 
     if (numResultsLeft() > 0) {
       const relatedLocAbbrs = await this.#getRelatedLocations(params.loc);
-      result.relatedResults = await this.search(params.query, params.type, [relatedLocAbbrs], numResultsLeft());
+      result.relatedResults = await this.search(
+        params.query,
+        params.type,
+        [relatedLocAbbrs],
+        numResultsLeft(),
+      );
     }
-    
 
     res.send(result);
   }
@@ -251,4 +284,4 @@ class Server {
   }
 }
 
-export {Server};
+export { Server };
