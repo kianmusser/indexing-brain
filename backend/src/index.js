@@ -1,6 +1,6 @@
 import path from "node:path";
 import process from "node:process";
-import {Server} from "./server.js";
+import { Server } from "./server.js";
 
 
 const nameFolder = process.argv[2];
