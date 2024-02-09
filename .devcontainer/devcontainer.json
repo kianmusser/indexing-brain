@@ -19,7 +19,10 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cd backend && npm install"
+	"postCreateCommand": {
+		"install-npm-dependencies": "cd backend && npm install",
+		"install-ripgrep": "sudo apt update && sudo apt install ripgrep"
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
