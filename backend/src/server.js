@@ -138,15 +138,13 @@ class Server {
     const relatedLocationsTxt = await fs.readFile(relatedLocationsFile, {
       encoding: "utf-8",
     });
-    /**
-     * @type {Map<string, string[]>}
-     */
+    /** @type {Map<string, string[]>} */
     const relatedLocations = new Map();
 
-    /** * @type {string | undefined} */
     let curRelatedLocation;
     for (const line of relatedLocationsTxt.split("\n")) {
       const abbr = line.trim();
+      if (abbr === "" || abbr.startsWith("//")) continue;
       if (line[0] === " ") {
         if (curRelatedLocation === undefined) {
           throw new Error(
@@ -162,15 +160,16 @@ class Server {
           } else {
             relatedLocations.set(curRelatedLocation, [abbr]);
           }
-          curRelatedLocation = abbr;
         }
-      }
-
-      if (relatedLocations.has(loc)) {
-        return relatedLocations.get(loc);
       } else {
-        return [];
+        curRelatedLocation = abbr;
       }
+    }
+    const resultLocations = relatedLocations.get(loc);
+    if (resultLocations === undefined) {
+      return [];
+    } else {
+      return resultLocations;
     }
   }
 
@@ -263,7 +262,7 @@ class Server {
       result.relatedResults = await this.search(
         params.query,
         params.type,
-        [relatedLocAbbrs],
+        relatedLocAbbrs,
         numResultsLeft(),
       );
     }
