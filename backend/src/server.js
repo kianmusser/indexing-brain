@@ -22,16 +22,21 @@ function streamToString(stream) {
 
 
 class Server {
+  #app;
+  #port;
+  #nameFolder;
+  #maxResults;
   constructor(port, nameFolder) {
-    this.app = express();
-    this.port = port;
-    this.nameFolder = nameFolder;
+    this.#app = express();
+    this.#port = port;
+    this.#nameFolder = nameFolder;
+    this.#maxResults = 100;
 
-    this.app.use(cors());
+    this.#app.use(cors());
 
-    this.app.get("/", this.indexHandler.bind(this));
-    this.app.get("/locations", this.locationHandler.bind(this));
-    this.app.get("/search", this.searchHandler.bind(this));
+    this.#app.get("/", this.indexHandler.bind(this));
+    this.#app.get("/locations", this.locationHandler.bind(this));
+    this.#app.get("/search", this.searchHandler.bind(this));
   }
 
   indexHandler(req, res) {
@@ -39,7 +44,7 @@ class Server {
   }
 
   async getLocations() {
-    const dirs = await fs.readdir(this.nameFolder, { withFileTypes: true });
+    const dirs = await fs.readdir(this.#nameFolder, { withFileTypes: true });
     const locations = dirs
       .filter((d) => d.isDirectory())
       .map((d) => {
@@ -65,7 +70,52 @@ class Server {
     res.send(locationsNoFolder);
   }
 
-  async search(query, files, count) {
+  async #getFilePaths(type, locs) {
+    const locations = await this.getLocations();
+    const filePaths = locations
+      .filter((l) => locs.indexOf(l.abbr) !== -1)
+      .map((l) => {
+        const curFileName = `${titleCase(l.abbr)}${type}.txt`
+        return path.join(l.folder, curFileName);
+      });
+    return filePaths;
+  };
+
+  async #getRelatedLocations(loc) {
+    const relatedLocationsFile = path.join(this.#nameFolder, "meta", "relatedLocations.txt")
+    const relatedLocationsTxt = await fs.readFile(relatedLocationsFile, {encoding: "utf-8"});
+    const relatedLocations = new Map();
+
+    let curRelatedLocation;
+    for (const line of relatedLocationsTxt.split("\n")) {
+      const abbr = line.trim();
+      if (line[0] === " ") {
+        if (curRelatedLocation === undefined) {
+          throw new Error("received a related location without knowing what it's related to");
+        }
+        if (relatedLocations.has(curRelatedLocation)) {
+          relatedLocations.set(curRelatedLocation, [...relatedLocations.get(curRelatedLocation), abbr]);
+        } else {
+          relatedLocations.set(curRelatedLocation, [abbr]);
+        }
+      } else {
+        curRelatedLocation = abbr;
+      }
+    }
+
+    if (relatedLocations.has(loc)) {
+      return relatedLocations.get(loc);
+    } else {
+      return [];
+    }
+  }
+
+  async search(query, type, locations, count) {
+    if (locations.length === 0) {
+      return [];
+    }
+    const files = await this.#getFilePaths(type, locations);
+    this.#log(`files:`, locations, files);
     const proc = child_process.spawn("/usr/bin/rg", ["--crlf", "-H", "-m", count, query, ...files]);
     const output = await streamToString(proc.stdout);
     return output.split("\n").map((line) => {
@@ -99,26 +149,36 @@ class Server {
       return;
     }
 
-    const curLoc = locations.filter((l) => l.abbr === params.loc)[0];
-    const curFileName = `${titleCase(curLoc.abbr)}${params.type}.txt`
-    const curFilePath = path.join(curLoc.folder, curFileName);
-    console.log(params, curFilePath);
 
-    let results = [];
-    const output = await this.search(params.query, [curFilePath], 100);
-    results.push(...output);
+    const result = {
+      specificResults: [],
+      relatedResults: [],
+    };
 
-    res.send({ specificResults: results });
+    const numResultsLeft = () => {
+      return this.#maxResults - (result.specificResults.length + result.relatedResults.length);
+    }
+
+    // specific search
+    result.specificResults = await this.search(params.query, params.type, [params.loc], numResultsLeft());
+
+    if (numResultsLeft() > 0) {
+      const relatedLocAbbrs = await this.#getRelatedLocations(params.loc);
+      result.relatedResults = await this.search(params.query, params.type, [relatedLocAbbrs], numResultsLeft());
+    }
+    
+
+    res.send(result);
   }
 
-  log(...args) {
+  #log(...args) {
     console.log("IB>", ...args);
   }
 
   run() {
-    this.app.listen(this.port, () => {
-      this.log(`name folder ${this.nameFolder}`);
-      this.log(`listening on port ${this.port}`);
+    this.#app.listen(this.#port, () => {
+      this.#log(`name folder ${this.#nameFolder}`);
+      this.#log(`listening on port ${this.#port}`);
     });
   }
 }
