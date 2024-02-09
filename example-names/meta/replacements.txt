@@ -1,0 +1,6 @@
+# some comments here
+# if a comment has the symbol below, it is considered a replacement
+#A -> t
+test -> other
+first -> second
+@A -> [abcde]

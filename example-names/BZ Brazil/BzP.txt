@@ -1,0 +1,1000 @@
+﻿					The more indented the higher in sorting order!
+ 364
+ 364 = part of a longer name
+/Placido de Castro
+/Placido de Castro = part of a longer name
+0 Bairro Abacaterral
+0 Bairro Abacaterral, Casa, Mâncio Lima, Acre
+0 Bairro Maloquinha
+0 Bairro Maloquinha, Casa, Mâncio Lima, Acre
+0 Bairro Maloquinha, Mâncio Lima, Acre
+0 Comunidade Republica
+0 Comunidade Republica, Casa, Mâncio Lima, Acre
+0 Comunidade Republica, Mâncio Lima, Acre
+0 Estrada Br 364
+0 Estrada Br 364, Casa, Cruzeiro Do Sul, Acre
+0 Estrada Dias Martins
+0 Estrada Dias Martins, Chacara, Rio Branco, Acre
+0 Estrada Do Barao
+0 Estrada Do Barao, Mâncio Lima, Acre
+0 Ramal Carlinho
+0 Ramal Carlinho, Casa, Rio Branco, Acre
+0 Ramal Do Dez
+0 Ramal Do Dez, Plácido de Castro, Acre
+0 Ramal Epitacio
+0 Ramal Epitacio, Plácido de Castro, Acre
+0 Ramal Iracema
+0 Ramal Iracema, Casa 01, Mâncio Lima, Acre
+0 Ramal Iracema, Casa 02, Mâncio Lima, Acre
+0 Ramal Iracema, Casa 03, Mâncio Lima, Acre
+0 Ramal Iracema, Frente, Mâncio Lima, Acre
+0 Ramal Iracema, Fundos, Mâncio Lima, Acre
+0 Ramal Iracema, Mâncio Lima, Acre
+0 Ramal Nunes
+0 Ramal Nunes, Plácido de Castro, Acre
+0 Ramal Olho D Agua
+0 Ramal Olho D Agua, Plácido de Castro, Acre
+0 Rio Amonia
+0 Rio Amonia, Frente, Marechal Thaumaturgo, Acre
+0 Rio Amonia, Marechal Thaumaturgo, Acre
+0 Rio Jurua
+0 Rio Jurua, Porto Walter, Acre
+0 Rio Liberdade
+0 Rio Liberdade, Casa, Cruzeiro Do Sul, Acre
+0 Rio Moa
+0 Rio Moa, Casa, Mâncio Lima, Acre
+0 Rio Purus
+0 Rio Purus, Manoel Urbano, Acre
+0 Rodovia 364
+0 Rodovia 364 Ramal Apui
+0 Rodovia 364 Ramal Apui, Casa, Plácido de Castro, Acre
+0 Rodovia 364 Ramal Apui, Plácido de Castro, Acre
+0 Rodovia 364, Barracao, Cruzeiro Do Sul, Acre
+0 Rodovia 364, Casa 1, Cruzeiro Do Sul, Acre
+0 Rodovia 364, Casa Outros, Cruzeiro Do Sul, Acre
+0 Rodovia 364, Casa, Cruzeiro Do Sul, Acre
+0 Rodovia 364, Casa, Plácido de Castro, Acre
+0 Rodovia 364, Cobertura, Cruzeiro Do Sul, Acre
+0 Rodovia 364, Cruzeiro Do Sul, Acre
+0 Rodovia 364, Estancia, Cruzeiro Do Sul, Acre
+0 Rodovia 364, Outros, Cruzeiro Do Sul, Acre
+0 Rodovia 364, Plácido de Castro, Acre
+0 Rodovia Ac 40
+0 Rodovia Ac 40, Plácido de Castro, Acre
+0 Rodovia Ac 475
+0 Rodovia Ac 475, Plácido de Castro, Acre
+0 Rodovia Br364
+0 Rodovia Br364, Cruzeiro Do Sul, Acre
+0 Rua 5 de Novembro
+0 Rua 5 de Novembro, Frente Anexo, Marechal Thaumaturgo, Acre
+0 Rua 5 de Novembro, Fundos Casa 1, Marechal Thaumaturgo, Acre
+0 Rua 5 de Novembro, Fundos Casa 2, Marechal Thaumaturgo, Acre
+0 Rua 5 de Novembro, Fundos, Marechal Thaumaturgo, Acre
+0 Rua 5 de Novembro, Marechal Thaumaturgo, Acre
+0 Rua Aureliano Muniz de Andrade
+0 Rua Aureliano Muniz de Andrade, Mâncio Lima, Acre
+0 Rua Fernando Guapindai
+0 Rua Fernando Guapindai, Fundos, Marechal Thaumaturgo, Acre
+0 Rua Fernando Guapindai, Marechal Thaumaturgo, Acre
+0 Rua Fernando Guapindai, Sobrado, Marechal Thaumaturgo, Acre
+0 Rua Fernando Guapindai, Terreo, Marechal Thaumaturgo, Acre
+0 Rua Francisco Bonifacio Da Costa
+0 Rua Francisco Bonifacio Da Costa, Frente, Marechal Thaumaturgo, Acre
+0 Rua Francisco Bonifacio Da Costa, Fundos, Marechal Thaumaturgo, Acre
+0 Rua Francisco Bonifacio Da Costa, Marechal Thaumaturgo, Acre
+0 Rua Joao Alves
+0 Rua Joao Alves, Mâncio Lima, Acre
+0 Rua Joao Eleoterio Da Silva
+0 Rua Joao Eleoterio Da Silva, Mâncio Lima, Acre
+0 Rua Jose de Abreu
+0 Rua Jose de Abreu, Mâncio Lima, Acre
+0 Rua Jose Ferreira Lima
+0 Rua Jose Ferreira Lima, Plácido de Castro, Acre
+0 Travessa Monte Das Oliveiras
+0 Travessa Monte Das Oliveiras, Apartamento 2, Rio Branco, Acre
+0 Travessa Monte Das Oliveiras, Rio Branco, Acre
+00, Salvador, Bahia
+00-A
+000
+000 = part of a longer name
+01
+01 = part of a longer name
+01 bairro
+01 de Maio
+01 de Maio = part of a longer name
+01 Oriom = part of a longer name
+01 Para Linha 02
+01 Para Linha 02 = part of a longer name
+01 Ramal Eletra I
+01 Ramal Eletra I = part of a longer name
+01, Salvador, Bahia
+02
+02 = part of a longer name
+02 bairro
+02 de Junho
+02 de Junho = part of a longer name
+02 HI Rua 6	Conjunto
+02 Ramal Floresta
+02 Ramal Floresta = part of a longer name
+02, Sao Paolo
+02, Sao Paolo = 02, Sao Paolo
+02, Sao Paolo = 02, São Paolo
+02, São Paolo
+02-Núcleo C	Caminho
+03
+03 = part of a longer name
+03 bairro
+03 Ramal Floresta
+03 Ramal Floresta = part of a longer name
+04
+04 = part of a longer name
+04 de Marco
+04 de Marco = part of a longer name
+04 Ramal Do Recife
+04 Ramal Do Recife = part of a longer name
+04 Rodovia Estrada Do Pacifico Br 317
+04 Rodovia Estrada Do Pacifico Br 317 = part of a longer name
+05
+05 = part of a longer name
+05 de Dezembro
+05 de Dezembro = part of a longer name
+05 de Novembro
+05 de Novembro = part of a longer name
+05 Ramal Do Meio
+05 Ramal Do Meio = part of a longer name
+06
+06 = part of a longer name
+06 bairro
+06 de Agosto
+06 de Agosto = part of a longer name
+06 de Maio
+06 de Maio = part of a longer name
+06 HI Rua 4	Conjunto
+06 Ramal Do Meio
+06 Ramal Do Meio = part of a longer name
+07
+07 = part of a longer name
+07 bairro
+07 de Setembro
+07 de Setembro = part of a longer name
+07-Setor 01	Caminho
+08
+08 = part of a longer name
+08 de Dezembro
+08 de Dezembro = part of a longer name
+08 de Marco
+08 de Marco = part of a longer name
+09
+09 = part of a longer name
+09 bairro
+09 Ou Caninde
+09 Ou Caninde = part of a longer name
+1	Avenida
+1	Rua
+1	Servidão
+1
+1 1C Ramal Caqueta
+1 1C Ramal Caqueta, Porto Acre, Acre
+1 2
+1 2, Salvador, Bahia
+1 2, Sao Paolo
+1 2, Sao Paolo = 1 2, Sao Paolo
+1 2, Sao Paolo = 1 2, São Paolo
+1 2, São Paolo
+1 23
+1 23, Rio de
+1 23, Rio de Janeiro
+1 23, Riode
+1 23, Riode Janeiro = 1 23, Rio de Janeiro
+1 23, Salvador, Bahia
+1 23, Sao Paolo
+1 23, Sao Paolo = 1 23, Sao Paolo
+1 23, Sao Paolo = 1 23, Sao Paolo = 1 23, Sao Paolo = 1 23, São Paolo
+1 23, Sao Paolo = 1 23, São Paolo
+1 23, São Paolo
+1 = Avenida
+1 = Calle
+1 = Diagonal
+1 = part of a longer name
+1 Aldeia Alves Rodrigues
+1 Aldeia Alves Rodrigues, Casa, Sena Madureira, Acre
+1 Aldeia Maronawa
+1 Aldeia Maronawa, Feijó, Acre
+1 Avenida 25 de Dezembro
+1 Avenida 25 de Dezembro, Epitaciolândia, Acre
+1 Avenida Antonio Da Rocha Viana
+1 Avenida Antonio Pessoa Juca
+1 Avenida Antonio Pessoa Juca, Frente, Rio Branco, Acre
+1 Avenida Antonio Pessoa Juca, Rio Branco, Acre
+1 Avenida Avelino Leal
+1 Avenida Avelino Leal, Tarauacá, Acre
+1 Avenida Br 317
+1 Avenida Br 317, Epitaciolândia, Acre
+1 Avenida Brasil
+1 Avenida Brasil, Acrelândia, Acre
+1 Avenida Doutor Mario Maia
+1 Avenida Doutor Mario Maia, Rio Branco, Acre
+1 Avenida Edmundo Pinto
+1 Avenida Edmundo Pinto, Rio Branco, Acre
+1 Avenida Flaviano Melo
+1 Avenida Flaviano Melo, Lado, Rio Branco, Acre
+1 Avenida Getulio Vargas
+1 Avenida Getulio Vargas, Rio Branco, Acre
+1 Avenida Governador Edmundo Pinto
+1 Avenida Governador Edmundo Pinto, Outros, Capixaba, Acre
+1 Avenida Iguacu Da Gloria
+1 Avenida Iguacu Da Gloria, Rio Branco, Acre
+1 Avenida Japiim
+1 Avenida Japiim, Mâncio Lima, Acre
+1 Avenida Jose Rui Lino
+1 Avenida Lauro Muller
+1 Avenida Lauro Muller, Cruzeiro Do Sul, Acre
+1 Avenida Manoel Marinho Monte
+1 Avenida Manoel Vitalina
+1 Avenida Manoel Vitalina, Cruzeiro Do Sul, Acre
+1 Avenida Marechal Deodoro
+1 Avenida Marechal Deodoro, Box 4, Feijó, Acre
+1 Avenida Marinho Monte
+1 Avenida Ponta Negra
+1 Avenida Ponta Negra, Lote 11, Rio Branco, Acre
+1 Avenida Praia Do Amapa
+1 Avenida Praia Do Amapa, Lote 3 Frente, Rio Branco, Acre
+1 Avenida Prefeito Rolando Moreira
+1 Avenida Rio Jurua
+1 Avenida Rio Jurua, Casa, Cruzeiro Do Sul, Acre
+1 Avenida Santos Dumont
+1 Avenida Santos Dumont, Frente, Epitaciolândia, Acre
+1 Avenida Via Verde
+1 Avenida Via Verde, Casa, Rio Branco, Acre
+1 Avenida Via Verde, Predio, Rio Branco, Acre
+1 Barraca Ramal Caqueta
+1 Barraca Ramal Caqueta, Porto Acre, Acre
+1 Beco Da Invernada
+1 Beco Da Invernada, Rio Branco, Acre
+1 Beco Deriva Com A Rua Da Esperanca
+1 Beco Deriva Com A Rua Da Esperanca, Lado Fundos, Rio Branco, Acre
+1 Beco Deriva Com A Rua Da Esperanca, Lado, Rio Branco, Acre
+1 Beco Deriva Com A Rua Da Esperanca, Rio Branco, Acre
+1 Beco Do Gaucho
+1 Beco Do Gaucho, Quarto 2, Rio Branco, Acre
+1 Beco Ligacao 1
+1 Beco Ligacao 1, Rio Branco, Acre
+1 Box Rio Iaco
+1 Box Rio Iaco, Casa, Sena Madureira, Acre
+1 C2 Ramal Caqueta
+1 C2 Ramal Caqueta, Porto Acre, Acre
+1 C3 Ramal Caqueta
+1 C3 Ramal Caqueta, Porto Acre, Acre
+1 C4 Ramal Caqueta
+1 C4 Ramal Caqueta, Porto Acre, Acre
+1 C5 Ramal Caqueta
+1 C5 Ramal Caqueta, Porto Acre, Acre
+1 Cam A Direita
+1 Cam A Direita = part of a longer name
+1 Casa Estrada Br 317
+1 Casa Estrada Br 317, Senador Guiomard, Acre
+1 Cce Bairro Maloquinha
+1 Cce Bairro Maloquinha, Casa, Mâncio Lima, Acre
+1 Cce Comunidade Nova Cintra
+1 Cce Comunidade Nova Cintra, Rodrigues Alves, Acre
+1 Cce Estrada Br 307
+1 Cce Estrada Br 307, Mâncio Lima, Acre
+1 Cce Estrada Do Barao
+1 Cce Estrada Do Barao, Mâncio Lima, Acre
+1 Cce Igarape Foz Do Apui
+1 Cce Igarape Foz Do Apui, Casa 11, Rodrigues Alves, Acre
+1 Cce Igarape Piaui
+1 Cce Igarape Piaui, Mâncio Lima, Acre
+1 Cce Igarape Valparaiso
+1 Cce Igarape Valparaiso, Porto Walter, Acre
+1 Cce Linha 03 Ramal Floresta
+1 Cce Linha 03 Ramal Floresta, Acrelândia, Acre
+1 Cce Projeto Bom Vento
+1 Cce Projeto Bom Vento, Rodrigues Alves, Acre
+1 Cce Ramal Avai
+1 Cce Ramal Avai, Rodrigues Alves, Acre
+1 Cce Ramal Bacuri
+1 Cce Ramal Bacuri, Rodrigues Alves, Acre
+1 Cce Ramal Bahia
+1 Cce Ramal Bahia, Rodrigues Alves, Acre
+1 Cce Ramal Da Bananeira
+1 Cce Ramal Da Bananeira, Rodrigues Alves, Acre
+1 Cce Ramal Da Quadra 11
+1 Cce Ramal Da Quadra 11, Acrelândia, Acre
+1 Cce Ramal Do Banho
+1 Cce Ramal Do Banho, Mâncio Lima, Acre
+1 Cce Ramal Do Km 20
+1 Cce Ramal Do Km 20 Proj Cumaru
+1 Cce Ramal Do Km 20 Proj Cumaru, Acrelândia, Acre
+1 Cce Ramal Do Km 20, Acrelândia, Acre
+1 Cce Ramal Do Km 24
+1 Cce Ramal Do Km 24, Acrelândia, Acre
+1 Cce Ramal Do Vinte
+1 Cce Ramal Do Vinte, Mâncio Lima, Acre
+1 Cce Ramal Feijao Insosso
+1 Cce Ramal Feijao Insosso, Mâncio Lima, Acre
+1 Cce Ramal Linha 7
+1 Cce Ramal Linha 7, Casa
+1 Cce Ramal Linha 7, Casa, Acrelândia, Acre
+1 Cce Ramal Linha 7, Sitio
+1 Cce Ramal Linha 7, Sitio, Acrelândia, Acre
+1 Cce Ramal Parana Dos Mouras
+1 Cce Ramal Parana Dos Mouras, Rodrigues Alves, Acre
+1 Cce Ramal Pinheiros
+1 Cce Ramal Pinheiros, Rodrigues Alves, Acre
+1 Cce Ramal Sa0 Paulo
+1 Cce Ramal Sa0 Paulo, Casa, Rodrigues Alves, Acre
+1 Cce Ramal Tiririca
+1 Cce Ramal Tiririca, Rodrigues Alves, Acre
+1 Cce Ramal Torre Da Lua
+1 Cce Ramal Torre Da Lua, Casa, Rodrigues Alves, Acre
+1 Cce Ramal Uniao
+1 Cce Ramal Uniao, Rodrigues Alves, Acre
+1 Cce Rio Azul
+1 Cce Rio Azul, Mâncio Lima, Acre
+1 Cce Rio Cruzeiro Do Vale
+1 Cce Rio Cruzeiro Do Vale, Porto Walter, Acre
+1 Cce Rio Das Minas
+1 Cce Rio Das Minas, Porto Walter, Acre
+1 Cce Rio Jurua
+1 Cce Rio Jurua, Marechal Thaumaturgo, Acre
+1 Cce Rio Jurua, Porto Walter, Acre
+1 Cce Rio M0A
+1 Cce Rio M0A, Mâncio Lima, Acre
+1 Cce Rio Moa
+1 Cce Rio Moa, Casa, Mâncio Lima, Acre
+1 Cce Rio Ouro Preto
+1 Cce Rio Ouro Preto, Porto Walter, Acre
+1 Cce Rodovia 364
+1 Cce Rodovia 364, Casa, Cruzeiro Do Sul, Acre
+1 Cce Rodovia 364, Outros, Cruzeiro Do Sul, Acre
+1 Cce Rodovia 364, Rodrigues Alves, Acre
+1 Cce Rodovia Br364
+1 Cce Rodovia Br364, Cruzeiro Do Sul, Acre
+1 Cce Rua Deracre
+1 Cce Rua Deracre, Casa, Cruzeiro Do Sul, Acre
+1 Cce Rua Deracre, Fundos, Cruzeiro Do Sul, Acre
+1 Cce Rua Dos Militar
+1 Cce Rua Dos Militar, Santa Rosa Do Purus, Acre
+1 Cce Rua Francisca Facanha
+1 Cce Rua Francisca Facanha, Mâncio Lima, Acre
+1 Cce Rua Valerio Caldas de Magalhaes
+1 Cce Rua Valerio Caldas de Magalhaes, Manoel Urbano, Acre
+1 Cce Seringal Esperanca
+1 Cce Seringal Esperanca, Porto Walter, Acre
+1 Cce Seringal Humaita
+1 Cce Seringal Humaita, Porto Walter, Acre
+1 Cee Avenida Japiim
+1 Cee Avenida Japiim, Mâncio Lima, Acre
+1 Colonia 2 Irmaos
+1 Colonia 2 Irmaos, Feijó, Acre
+1 Colonia Bela Vista
+1 Colonia Bela Vista, Feijó, Acre
+1 Colonia Boa Vista
+1 Colonia Boa Vista, Feijó, Acre
+1 Colonia Bom Futuro
+1 Colonia Bom Futuro, Feijó, Acre
+1 Colonia Bom Lugar
+1 Colonia Bom Lugar, Fazenda, Rio Branco, Acre
+1 Colonia Campo Verde
+1 Colonia Campo Verde, Feijó, Acre
+1 Colonia Canpina
+1 Colonia Canpina, Feijó, Acre
+1 Colonia Coca Cola
+1 Colonia Coca Cola, Feijó, Acre
+1 Colonia Leitao
+1 Colonia Leitao, Feijó, Acre
+1 Colonia Menino Jesus
+1 Colonia Menino Jesus, Feijó, Acre
+1 Colonia Moemia
+1 Colonia Moemia, Feijó, Acre
+1 Colonia Montanha
+1 Colonia Montanha 1
+1 Colonia Montanha 1, Feijó, Acre
+1 Colonia Montanha, Feijó, Acre
+1 Colonia Nova Vida
+1 Colonia Nova Vida, Feijó, Acre
+1 Colonia Olho de Agua
+1 Colonia Olho de Agua, Feijó, Acre
+1 Colonia Pantanal
+1 Colonia Pantanal, Feijó, Acre
+1 Colonia Paraiso
+1 Colonia Paraiso, Feijó, Acre
+1 Colonia Pensao Tres
+1 Colonia Pensao Tres, Feijó, Acre
+1 Colonia Porto Verde
+1 Colonia Porto Verde, Feijó, Acre
+1 Colonia Recanto
+1 Colonia Recanto Oriental
+1 Colonia Recanto Oriental, Feijó, Acre
+1 Colonia Recanto Verde
+1 Colonia Recanto Verde, Feijó, Acre
+1 Colonia Recanto, Feijó, Acre
+1 Colonia Santa Cruz
+1 Colonia Santa Cruz, Feijó, Acre
+1 Colonia Santa Luzia
+1 Colonia Santa Luzia, Feijó, Acre
+1 Colonia Santa Maria
+1 Colonia Santa Maria, Feijó, Acre
+1 Colonia Sao Jose
+1 Colonia Sao Jose, Feijó, Acre
+1 Colonia Sao Pedro
+1 Colonia Sao Pedro, Feijó, Acre
+1 Colonia Sao Raimundo
+1 Colonia Sao Raimundo, Feijó, Acre
+1 Colonia Seringal Boa Vista
+1 Colonia Seringal Boa Vista, Feijó, Acre
+1 Colonia Terra Alta
+1 Colonia Terra Alta 2
+1 Colonia Terra Alta 2, Feijó, Acre
+1 Colonia Terra Alta, Feijó, Acre
+1 Colonia Tinguir
+1 Colonia Tinguir, Feijó, Acre
+1 Colonia Vista Alegre
+1 Colonia Vista Alegre, Feijó, Acre
+1 Comunidade Mira Flores
+1 Comunidade Mira Flores, Feijó, Acre
+1 Comunidade Olivenca
+1 Comunidade Olivenca, Cruzeiro Do Sul, Acre
+1 Cses Ac Ramal 12
+1 Cses Ac Ramal 12, Plácido de Castro, Acre
+1 de Abril
+1 de Abril = part of a longer name
+1 de Agosto de 1806 = Calle
+1 de Circunvalacion 1 = Avenida Circunvalacion
+1 de Circunvalacion 1 = Avenida Circunvalacion = 1 de Circunvalacion 1 = Avenida Circunvalacion
+1 de Circunvalacion 1 = Avenida Circunvalacion = 1 de Circunvalacion 1 = Avenida Circunvalación
+1 de Circunvalacion 1 = Avenida Circunvalación
+1 de Circunvalacion 3 = Avenida Circunvalacion
+1 de Circunvalacion 3 = Avenida Circunvalacion = 1 de Circunvalacion 3 = Avenida Circunvalacion
+1 de Circunvalacion 3 = Avenida Circunvalacion = 1 de Circunvalacion 3 = Avenida Circunvalación
+1 de Circunvalacion 3 = Avenida Circunvalación
+1 de Julio = Calle
+1 de Maio
+1 de Maio = part of a longer name
+1 de Marzo = Calle
+1 de Mayo = Calle
+1 deAgosto de1806 = Calle = 1 de Agosto de 1806 = Calle
+1 deCircunvalacion 1 = Avenida Circunvalacion = 1 de Circunvalacion 1 = Avenida Circunvalacion
+1 deCircunvalacion 1 = Avenida Circunvalación = 1 de Circunvalacion 1 = Avenida Circunvalación
+1 deCircunvalacion 3 = Avenida Circunvalacion = 1 de Circunvalacion 3 = Avenida Circunvalacion
+1 deCircunvalacion 3 = Avenida Circunvalación = 1 de Circunvalacion 3 = Avenida Circunvalación
+1 deJulio = Calle = 1 de Julio = Calle
+1 deMarzo = Calle = 1 de Marzo = Calle
+1 deMayo = Calle = 1 de Mayo = Calle
+1 Direita = part of a longer name
+1 E Rio Acuraua
+1 E Rio Acuraua, Tarauacá, Acre
+1 E Rua Osmar Santos
+1 E Rua Osmar Santos, Feijó, Acre
+1 Estrada Aeroporto
+1 Estrada Aeroporto, Casa, Feijó, Acre
+1 Estrada Br
+1 Estrada Br  364
+1 Estrada Br  364, Feijó, Acre
+1 Estrada Br 364
+1 Estrada Br 364, Cruzeiro Do Sul, Acre
+1 Estrada Br 364, Feijó, Acre
+1 Estrada Br, Feijó, Acre
+1 Estrada Br364
+1 Estrada Br364 Km29
+1 Estrada Br364 Km29, Feijó, Acre
+1 Estrada Br364, Casa 20, Feijó, Acre
+1 Estrada Br364, Casa, Feijó, Acre
+1 Estrada Da Sobral
+1 Estrada Da Sobral, Rio Branco, Acre
+1 Estrada Da Usina
+1 Estrada Da Usina, Rio Branco, Acre
+1 Estrada Do Aviario
+1 Estrada Do Aviario, Rio Branco, Acre
+1 Estrada Do Calafate
+1 Estrada Do Calafate, Frente, Rio Branco, Acre
+1 Estrada Do Mutum
+1 Estrada Do Mutum, Chacara, Rio Branco, Acre
+1 Estrada Estrada Br 364
+1 Estrada Estrada Br 364, Feijó, Acre
+1 Estrada Jarbas Passarinho
+1 Estrada Jarbas Passarinho, Rio Branco, Acre
+1 Estrada Praia Redonda
+1 Estrada Quixada
+1 Estrada Quixada, Fundos, Rio Branco, Acre
+1 Estrada Ramal 9 de Agosto
+1 Estrada Ramal 9 de Agosto, Casa, Feijó, Acre
+1 Estrada Velha Do Aeroporto
+1 Estrada Velha Do Aeroporto, Cruzeiro Do Sul, Acre
+1 Estrada Xiburema
+1 Fa Avenida Guanabara
+1 Fa Avenida Guanabara, Apartamento 12, Sena Madureira, Acre
+1 Fa Avenida Guanabara, Apartamento 16, Sena Madureira, Acre
+1 Fa Avenida Placido de Castro
+1 Fa Avenida Placido de Castro, Feijó, Acre
+1 Fa Beco Rio Iaco
+1 Fa Beco Rio Iaco, Sena Madureira, Acre
+1 Fa Estrada Do Xiburema
+1 Fa Estrada Do Xiburema, Sena Madureira, Acre
+1 Fa Estrada Mario Lobao
+1 Fa Estrada Mario Lobao, Frente, Sena Madureira, Acre
+1 Fa Estrada Mario Lobao, Lote, Sena Madureira, Acre
+1 Fa Estrada Olho Dagua 2
+1 Fa Estrada Olho Dagua 2, Sena Madureira, Acre
+1 Fa Ramal Santa Ines
+1 Fa Ramal Santa Ines, Sena Madureira, Acre
+1 Fa Rua Aguinaldinho Chaves
+1 Fa Rua Aguinaldinho Chaves, Sena Madureira, Acre
+1 Fa Rua Antonio Carlos Pereira
+1 Fa Rua Antonio Carlos Pereira, Sena Madureira, Acre
+1 Fa Rua Antonio Gomes de Lima
+1 Fa Rua Antonio Gomes de Lima, Quadra 03 Casa 03, Sena Madureira, Acre
+1 Fa Rua Duque de Caxias
+1 Fa Rua Duque de Caxias, Apartamento 8, Sena Madureira, Acre
+1 Fa Rua Duque de Caxias, Sena Madureira, Acre
+1 Fa Rua Edinaldo Gomes Ferreira
+1 Fa Rua Edinaldo Gomes Ferreira, Fundos, Feijó, Acre
+1 Fa Rua Francisco Ambrosio Taveira
+1 Fa Rua Francisco Ambrosio Taveira, Feijó, Acre
+1 Fa Rua Joao Cunegundes
+1 Fa Rua Joao Cunegundes, Sena Madureira, Acre
+1 Fa Rua Joao Felismino Maia
+1 Fa Rua Joao Felismino Maia, Frente, Sena Madureira, Acre
+1 Fa Rua Jose Cezar Da Silva
+1 Fa Rua Jose Cezar Da Silva, Sena Madureira, Acre
+1 Fa Rua Jose Maciel Da Silva
+1 Fa Rua Jose Maciel Da Silva, Casa 1 Frente, Bujari, Acre
+1 Fa Rua Jose Maciel Da Silva, Casa 2 Lado, Bujari, Acre
+1 Fa Rua Luis Rodrigues Dos Santos
+1 Fa Rua Luis Rodrigues Dos Santos, Casa Fa 44, Sena Madureira, Acre
+1 Fa Rua Luzia Costa Figueredo
+1 Fa Rua Luzia Costa Figueredo, Sena Madureira, Acre
+1 Fa Rua Manoel Goncalves
+1 Fa Rua Manoel Goncalves, Sena Madureira, Acre
+1 Fa Rua Maranhao
+1 Fa Rua Maranhao, Lado, Sena Madureira, Acre
+1 Fa Rua Maranhao, Sena Madureira, Acre
+1 Fa Rua Marcial Miquilino Da Cunha
+1 Fa Rua Marcial Miquilino Da Cunha, Sena Madureira, Acre
+1 Fa Rua Mario Lobato
+1 Fa Rua Mario Lobato, Bujari, Acre
+1 Fa Rua Newton Prado
+1 Fa Rua Newton Prado, Fundos, Sena Madureira, Acre
+1 Fa Rua Padre Egidio
+1 Fa Rua Padre Egidio, Sena Madureira, Acre
+1 Fa Rua Piaui
+1 Fa Rua Piaui, Sena Madureira, Acre
+1 Fa Rua Quintino Bocaiuva
+1 Fa Rua Quintino Bocaiuva, Sena Madureira, Acre
+1 Fa Rua Raul Tamburini
+1 Fa Rua Raul Tamburini, Fundos, Sena Madureira, Acre
+1 Fa Rua Remarque de Queiroz
+1 Fa Rua Remarque de Queiroz, Sena Madureira, Acre
+1 Fa Rua Santos Dumont
+1 Fa Rua Santos Dumont, Sena Madureira, Acre
+1 Fa Rua Sem Denominacao 5
+1 Fa Rua Sem Denominacao 5, Sena Madureira, Acre
+1 Fa Rua Sem Denominacao 6
+1 Fa Rua Sem Denominacao 6, Sena Madureira, Acre
+1 Fa Rua Sem Denominacao 9
+1 Fa Rua Sem Denominacao 9, Sena Madureira, Acre
+1 Fa Rua Sem Denoninacao2
+1 Fa Rua Sem Denoninacao2, Sena Madureira, Acre
+1 Fa Rua Sergio Ferreira Da Silva
+1 Fa Rua Sergio Ferreira Da Silva, Sena Madureira, Acre
+1 Fa Rua Siqueira Campos
+1 Fa Rua Siqueira Campos, Sena Madureira, Acre
+1 Fa Rua Walter Wilton Maia
+1 Fa Rua Walter Wilton Maia, Sena Madureira, Acre
+1 Fa Seringal Vista Alegre
+1 Fa Seringal Vista Alegre, Feijó, Acre
+1 Fa Travessa Jose Joao Da Silva
+1 Fa Travessa Jose Joao Da Silva, Frente, Feijó, Acre
+1 Fa Travessa Simao Aguiar
+1 Fa Travessa Simao Aguiar, Sena Madureira, Acre
+1 Fazenda Do Juarez
+1 Fazenda Do Juarez, Feijó, Acre
+1 Fazenda Do Ozirandi
+1 Fazenda Do Ozirandi, Feijó, Acre
+1 Fazenda Nova Esperanca
+1 Fazenda Nova Esperanca, Feijó, Acre
+1 Fazenda Paraiba
+1 Fazenda Paraiba, Feijó, Acre
+1 Fazenda Paraiso
+1 Fazenda Paraiso, Feijó, Acre
+1 Fazenda Vista Alegre
+1 Fazenda Vista Alegre, Feijó, Acre
+1 Funasa Aldeia Anjo
+1 Funasa Aldeia Anjo, Feijó, Acre
+1 Funasa Avenida Avelino Leal
+1 Funasa Avenida Avelino Leal, Tarauacá, Acre
+1 Funasa Avenida Br 317
+1 Funasa Avenida Br 317, Barracao, Capixaba, Acre
+1 Funasa Avenida Br 317, Casa Fazenda, Capixaba, Acre
+1 Funasa Beco Raimundo Goncalves
+1 Funasa Beco Raimundo Goncalves, Tarauacá, Acre
+1 Funasa Central Silencio
+1 Funasa Central Silencio, Anexo, Rodrigues Alves, Acre
+1 Funasa Central Silencio, Rodrigues Alves, Acre
+1 Funasa Colonia Santo Resex Cazumba Iracema
+1 Funasa Colonia Santo Resex Cazumba Iracema, Sena Madureira, Acre
+1 Funasa Comunidade Do Profeta
+1 Funasa Comunidade Do Profeta, Rodrigues Alves, Acre
+1 Funasa Comunidade Novo Horizonte
+1 Funasa Comunidade Novo Horizonte, Casa, Porto Walter, Acre
+1 Funasa Comunidade Reforma
+1 Funasa Comunidade Reforma, Casa, Porto Walter, Acre
+1 Funasa Estrada Ac 475 Estrada Do Agricultor
+1 Funasa Estrada Ac 475 Estrada Do Agricultor, Acrelândia, Acre
+1 Funasa Estrada Do Xiburema
+1 Funasa Estrada Do Xiburema, Sena Madureira, Acre
+1 Funasa Linha Eletronica Ou Euclides Da Cunh
+1 Funasa Linha Eletronica Ou Euclides Da Cunh, Acrelândia, Acre
+1 Funasa Projeto Bom Vento
+1 Funasa Projeto Bom Vento, Casa, Rodrigues Alves, Acre
+1 Funasa Projeto Bom Vento, Rodrigues Alves, Acre
+1 Funasa Ramal 105
+1 Funasa Ramal 105, Acrelândia, Acre
+1 Funasa Ramal 108
+1 Funasa Ramal 108, Acrelândia, Acre
+1 Funasa Ramal 16
+1 Funasa Ramal 16, Sena Madureira, Acre
+1 Funasa Ramal 3
+1 Funasa Ramal 3, Casa 1 Fundos, Bujari, Acre
+1 Funasa Ramal 7 de Setembro
+1 Funasa Ramal 7 de Setembro, Casa, Bujari, Acre
+1 Funasa Ramal Antonio Nana
+1 Funasa Ramal Antonio Nana, Sena Madureira, Acre
+1 Funasa Ramal Bigode
+1 Funasa Ramal Bigode, Acrelândia, Acre
+1 Funasa Ramal Brasil Bolivia
+1 Funasa Ramal Brasil Bolivia, Casa, Capixaba, Acre
+1 Funasa Ramal Campo Novo
+1 Funasa Ramal Campo Novo, Acrelândia, Acre
+1 Funasa Ramal Da Buritirana
+1 Funasa Ramal Da Buritirana, Rodrigues Alves, Acre
+1 Funasa Ramal Da Janete
+1 Funasa Ramal Da Janete, Acrelândia, Acre
+1 Funasa Ramal Da Limeira
+1 Funasa Ramal Da Limeira, Casa, Capixaba, Acre
+1 Funasa Ramal Das Meninas
+1 Funasa Ramal Das Meninas, Casa, Plácido de Castro, Acre
+1 Funasa Ramal Das Meninas, Plácido de Castro, Acre
+1 Funasa Ramal Do 17
+1 Funasa Ramal Do 17, Casa, Sena Madureira, Acre
+1 Funasa Ramal Do 17, Sena Madureira, Acre
+1 Funasa Ramal Do 25
+1 Funasa Ramal Do 25, Cais, Sena Madureira, Acre
+1 Funasa Ramal Do Baba
+1 Funasa Ramal Do Baba, Sena Madureira, Acre
+1 Funasa Ramal Do Baiano
+1 Funasa Ramal Do Baiano, Acrelândia, Acre
+1 Funasa Ramal Do Biroca
+1 Funasa Ramal Do Biroca, Porto Acre, Acre
+1 Funasa Ramal Do Cumaru Ou Ramal Do 108
+1 Funasa Ramal Do Cumaru Ou Ramal Do 108, Acrelândia, Acre
+1 Funasa Ramal Do Km 12
+1 Funasa Ramal Do Km 12, Acrelândia, Acre
+1 Funasa Ramal Do Km 14
+1 Funasa Ramal Do Km 14, Acrelândia, Acre
+1 Funasa Ramal Do Km 16
+1 Funasa Ramal Do Km 16, Acrelândia, Acre
+1 Funasa Ramal Do Km 8
+1 Funasa Ramal Do Km 8, Acrelândia, Acre
+1 Funasa Ramal Do Ouro
+1 Funasa Ramal Do Ouro, Casa, Sena Madureira, Acre
+1 Funasa Ramal Do Progresso
+1 Funasa Ramal Do Progresso, Acrelândia, Acre
+1 Funasa Ramal Edilza Carneiro
+1 Funasa Ramal Edilza Carneiro, Casa, Bujari, Acre
+1 Funasa Ramal F0Rtaleza
+1 Funasa Ramal F0Rtaleza, Rodrigues Alves, Acre
+1 Funasa Ramal Flaviano Melo Ou Linha 10
+1 Funasa Ramal Flaviano Melo Ou Linha 10, Casa, Porto Acre, Acre
+1 Funasa Ramal Granada
+1 Funasa Ramal Granada, Acrelândia, Acre
+1 Funasa Ramal Joao Paulista
+1 Funasa Ramal Joao Paulista, Sena Madureira, Acre
+1 Funasa Ramal Km 12
+1 Funasa Ramal Km 12, Acrelândia, Acre
+1 Funasa Ramal Km 16
+1 Funasa Ramal Km 16, Acrelândia, Acre
+1 Funasa Ramal Linha 1
+1 Funasa Ramal Linha 1, Acrelândia, Acre
+1 Funasa Ramal Linha 2
+1 Funasa Ramal Linha 2 Ou Santa Maria
+1 Funasa Ramal Linha 2 Ou Santa Maria, Acrelândia, Acre
+1 Funasa Ramal Linha 2, Acrelândia, Acre
+1 Funasa Ramal Linha 5
+1 Funasa Ramal Linha 5, Acrelândia, Acre
+1 Funasa Ramal Linha Seca
+1 Funasa Ramal Linha Seca, Fazenda 1, Sena Madureira, Acre
+1 Funasa Ramal Linha Tres
+1 Funasa Ramal Linha Tres, Acrelândia, Acre
+1 Funasa Ramal Mezacre
+1 Funasa Ramal Mezacre, Acrelândia, Acre
+1 Funasa Ramal Monte Alegre 58
+1 Funasa Ramal Monte Alegre 58, Plácido de Castro, Acre
+1 Funasa Ramal Nabor Junior
+1 Funasa Ramal Nabor Junior, Senador Guiomard, Acre
+1 Funasa Ramal Novo Encanto
+1 Funasa Ramal Novo Encanto, Acrelândia, Acre
+1 Funasa Ramal Porto Dias
+1 Funasa Ramal Porto Dias, Acrelândia, Acre
+1 Funasa Ramal Progresso Linha 7
+1 Funasa Ramal Progresso Linha 7, Acrelândia, Acre
+1 Funasa Ramal Quadra 17
+1 Funasa Ramal Quadra 17, Acrelândia, Acre
+1 Funasa Ramal Quadra 20
+1 Funasa Ramal Quadra 20, Acrelândia, Acre
+1 Funasa Ramal Quadra 21
+1 Funasa Ramal Quadra 21, Acrelândia, Acre
+1 Funasa Ramal Quadra 6
+1 Funasa Ramal Quadra 6, Acrelândia, Acre
+1 Funasa Ramal Ramal Do 12
+1 Funasa Ramal Ramal Do 12, Sena Madureira, Acre
+1 Funasa Ramal Santo Antonio
+1 Funasa Ramal Santo Antonio, Casa, Mâncio Lima, Acre
+1 Funasa Ramal Santo Antonio, Outros, Mâncio Lima, Acre
+1 Funasa Ramal Sao Geronimo
+1 Funasa Ramal Sao Geronimo, Rodrigues Alves, Acre
+1 Funasa Ramal Sao Joao
+1 Funasa Ramal Sao Joao, Capixaba, Acre
+1 Funasa Ramal Sergio Barros
+1 Funasa Ramal Sergio Barros, Sitio 1, Sena Madureira, Acre
+1 Funasa Ramal Treze de Maio
+1 Funasa Ramal Treze de Maio, Casa, Rodrigues Alves, Acre
+1 Funasa Ramal Wilson Barbosa
+1 Funasa Ramal Wilson Barbosa, Casa Fazenda, Capixaba, Acre
+1 Funasa Rio Abuna
+1 Funasa Rio Abuna, Acrelândia, Acre
+1 Funasa Rio Acre
+1 Funasa Rio Acre, Casa Outros, Capixaba, Acre
+1 Funasa Rio Acre, Fazenda, Capixaba, Acre
+1 Funasa Rio Caete
+1 Funasa Rio Caete, Sena Madureira, Acre
+1 Funasa Rio Cayte
+1 Funasa Rio Cayte, Sena Madureira, Acre
+1 Funasa Rio Emvira
+1 Funasa Rio Emvira, Feijó, Acre
+1 Funasa Rio Macaa
+1 Funasa Rio Macaa, Sitio 1, Sena Madureira, Acre
+1 Funasa Rio Macaua
+1 Funasa Rio Macaua, Sena Madureira, Acre
+1 Funasa Rodovia Ac 40
+1 Funasa Rodovia Ac 40, Plácido de Castro, Acre
+1 Funasa Rodovia Ac 40, Rio Branco, Acre
+1 Funasa Rodovia Ac 40, Senador Guiomard, Acre
+1 Funasa Rodovia Br 317
+1 Funasa Rodovia Br 317, Casa 3, Porto Acre, Acre
+1 Funasa Rodovia Br 317, Casa Chacara, Capixaba, Acre
+1 Funasa Rodovia Br 317, Casa Fazenda, Capixaba, Acre
+1 Funasa Rodovia Br 317, Casa Frente, Capixaba, Acre
+1 Funasa Rodovia Br 317, Casa Fundos, Capixaba, Acre
+1 Funasa Rodovia Br 317, Casa, Capixaba, Acre
+1 Funasa Rodovia Br 317, Deposito Lado, Capixaba, Acre
+1 Funasa Rodovia Br 364
+1 Funasa Rodovia Br 364, Bujari, Acre
+1 Funasa Rodovia Br 364, Tarauacá, Acre
+1 Funasa Rua C
+1 Funasa Rua C, Bujari, Acre
+1 Funasa Rua Constantino Mosle
+1 Funasa Rua Constantino Mosle, Tarauacá, Acre
+1 Funasa Rua Da Hortencia
+1 Funasa Rua Da Hortencia, Porto Acre, Acre
+1 Funasa Rua Das Palmeiras
+1 Funasa Rua Das Palmeiras, Porto Acre, Acre
+1 Funasa Rua Epaminondas Jacome
+1 Funasa Rua Epaminondas Jacome, Rio Branco, Acre
+1 Funasa Rua Expedito Pereira de Souza
+1 Funasa Rua Expedito Pereira de Souza, Bujari, Acre
+1 Funasa Rua Geraldo Mesquita Gurgel
+1 Funasa Rua Geraldo Mesquita Gurgel, Bujari, Acre
+1 Funasa Rua Joao Borges
+1 Funasa Rua Joao Borges, Bujari, Acre
+1 Funasa Rua Joao de Paiva
+1 Funasa Rua Joao de Paiva, Terreo, Tarauacá, Acre
+1 Funasa Rua Joao Nonato Paixao
+1 Funasa Rua Joao Nonato Paixao, Rodrigues Alves, Acre
+1 Funasa Rua Jose Augusto de Cavalho
+1 Funasa Rua Jose Augusto de Cavalho, Bujari, Acre
+1 Funasa Rua Manoel Vieira Da Cunha
+1 Funasa Rua Manoel Vieira Da Cunha, Tarauacá, Acre
+1 Funasa Rua Pojetada E 07
+1 Funasa Rua Pojetada E 07, Bujari, Acre
+1 Funasa Rua Raimundo Cristino
+1 Funasa Rua Raimundo Cristino, Sena Madureira, Acre
+1 Funasa Rua Severiano Ramos
+1 Funasa Rua Severiano Ramos, Tarauacá, Acre
+1 Funasa Sede Serraria Do 7
+1 Funasa Sede Serraria Do 7, Sena Madureira, Acre
+1 Funasa Travessa Antonio Amaro
+1 Funasa Travessa Antonio Amaro, Sena Madureira, Acre
+1 Funasa Travessa Brasileia
+1 Funasa Travessa Brasileia, Rio Branco, Acre
+1 Funasa Travessa Senador Guiomard
+1 Funasa Travessa Senador Guiomard, Bujari, Acre
+1 Funasa Travessao Da Linha 01 Para Linha 02
+1 Funasa Travessao Da Linha 01 Para Linha 02, Acrelândia, Acre
+1 Fundos Ramal Do Meio
+1 Fundos Ramal Do Meio, Porto Acre, Acre
+1 Fundos Rua Tiao Natureza
+1 Fundos Rua Tiao Natureza, Fundos Apartamento 07, Rio Branco, Acre
+1 Gva Estrada Br 317
+1 Gva Estrada Br 317, Senador Guiomard, Acre
+1 Gva Ramal 52
+1 Gva Ramal 52, Senador Guiomard, Acre
+1 Gva Ramal Boa Uniao
+1 Gva Ramal Boa Uniao, Senador Guiomard, Acre
+1 Gva Ramal Das Oncas
+1 Gva Ramal Das Oncas, Sitio, Senador Guiomard, Acre
+1 Gva Ramal Do Meio
+1 Gva Ramal Do Meio, Porto Acre, Acre
+1 Gva Ramal Do Seringueiro
+1 Gva Ramal Do Seringueiro, Porto Acre, Acre
+1 Gva Ramal Gadelha
+1 Gva Ramal Gadelha, Senador Guiomard, Acre
+1 Gva Ramal Guaranir
+1 Gva Ramal Guaranir, Senador Guiomard, Acre
+1 Gva Ramal Mulungu
+1 Gva Ramal Mulungu, Senador Guiomard, Acre
+1 Gva Ramal Nova Uniao
+1 Gva Ramal Nova Uniao, Casa, Senador Guiomard, Acre
+1 Gva Ramal Nova Uniao, Fazenda, Senador Guiomard, Acre
+1 Gva Rodovia Ac 40
+1 Gva Rodovia Ac 40, Senador Guiomard, Acre
+1 Gva Rodovia Br 317
+1 Gva Rodovia Br 317, Frente, Senador Guiomard, Acre
+1 Gva Rodovia Br 317, Lado, Senador Guiomard, Acre
+1 Gva Rodovia Br 317, Senador Guiomard, Acre
+1 Gva Rodovia Br 364
+1 Gva Rodovia Br 364, Fundos, Senador Guiomard, Acre
+1 Gva Rodovia Br 364, Predio, Senador Guiomard, Acre
+1 Gva Rodovia Br 364, Senador Guiomard, Acre
+1 Gva Rua Siqueira Campos
+1 Gva Rua Siqueira Campos, Sobrado Apartamento 03, Sena Madureira, Acre
+1 Igarape Araca
+1 Igarape Araca, Casa, Feijó, Acre
+1 Igarape Araca, Dependencia, Feijó, Acre
+1 Igarape Jurupari
+1 Igarape Jurupari, Feijó, Acre
+1 Igarape Macipira
+1 Igarape Macipira, Feijó, Acre
+1 Igarape Toaia
+1 Igarape Toaia, Feijó, Acre
+1 JF	Avenida
+1 Km 26 Rodovia Br364
+1 Km 26 Rodovia Br364, Chacara, Bujari, Acre
+1 Km Estrada Ramal 9 de Agosto
+1 Km Estrada Ramal 9 de Agosto, Casa, Feijó, Acre
+1 Km Ramal 12
+1 Km Ramal 12, Plácido de Castro, Acre
+1 Km Ramal Belo Jardin
+1 Km Ramal Belo Jardin, Rio Branco, Acre
+1 Km Ramal Bujari
+1 Km Ramal Bujari, Bujari, Acre
+1 Km Ramal Campos Abertos
+1 Km Ramal Campos Abertos, Casa 1, Plácido de Castro, Acre
+1 Km Ramal Campos Abertos, Casa, Plácido de Castro, Acre
+1 Km Ramal Cazuza
+1 Km Ramal Cazuza, Plácido de Castro, Acre
+1 Km Ramal Cemiterio
+1 Km Ramal Cemiterio, Acrelândia, Acre
+1 Km Ramal Cemiterio, Casa
+1 Km Ramal Cemiterio, Casa, Acrelândia, Acre
+1 Km Ramal Ceus Abertos
+1 Km Ramal Ceus Abertos, Casa, Plácido de Castro, Acre
+1 Km Ramal Ceus Abertos, Sede, Plácido de Castro, Acre
+1 Km Ramal Da Bacia
+1 Km Ramal Da Bacia, Assis Brasil, Acre
+1 Km Ramal Da Colonacre
+1 Km Ramal Da Colonacre, Barraca
+1 Km Ramal Da Colonacre, Barraca 2
+1 Km Ramal Da Colonacre, Barraca 2, Acrelândia, Acre
+1 Km Ramal Da Colonacre, Barraca, Acrelândia, Acre
+1 Km Ramal Das Chacaras
+1 Km Ramal Das Chacaras, Casa, Plácido de Castro, Acre
+1 Km Ramal Das Chacaras, Chacara, Plácido de Castro, Acre
+1 Km Ramal Do Acai
+1 Km Ramal Do Acai, Porto Acre, Acre
+1 Km Ramal Do Cazuza
+1 Km Ramal Do Cazuza, Assis Brasil, Acre
+1 Km Ramal Do Lili
+1 Km Ramal Do Lili, Assis Brasil, Acre
+1 Km Ramal Do Mutum
+1 Km Ramal Do Mutum, Lado, Rio Branco, Acre
+1 Km Ramal Do Pastor Passos
+1 Km Ramal Do Pastor Passos, Acrelândia, Acre
+1 Km Ramal Do S
+1 Km Ramal Do S, Plácido de Castro, Acre
+1 Km Ramal Dos Moreira
+1 Km Ramal Dos Moreira, Casa, Rio Branco, Acre
+1 Km Ramal Dos Moreira, Chacara, Rio Branco, Acre
+1 Km Ramal Epitacio
+1 Km Ramal Epitacio, Plácido de Castro, Acre
+1 Km Ramal Geraldo Fernandes
+1 Km Ramal Geraldo Fernandes, Sena Madureira, Acre
+1 Km Ramal Linha 1
+1 Km Ramal Linha 1, Barraca
+1 Km Ramal Linha 1, Barraca, Acrelândia, Acre
+1 Km Ramal Linha 108
+1 Km Ramal Linha 108, Chacara
+1 Km Ramal Linha 108, Chacara, Acrelândia, Acre
+1 Km Ramal Linha 108, Sitio
+1 Km Ramal Linha 108, Sitio, Acrelândia, Acre
+1 Km Ramal Linha 11
+1 Km Ramal Linha 11, Casa, Porto Acre, Acre
+1 Km Ramal Linha 2
+1 Km Ramal Linha 2, Porto Acre, Acre
+1 Km Ramal Linha 7
+1 Km Ramal Linha 7, Sitio
+1 Km Ramal Linha 7, Sitio, Acrelândia, Acre
+1 Km Ramal Magalhaes
+1 Km Ramal Magalhaes, Casa, Rio Branco, Acre
+1 Km Ramal Mendes Carlos I
+1 Km Ramal Mendes Carlos I, Plácido de Castro, Acre
+1 Km Ramal Mendes Carlos Ii
+1 Km Ramal Mendes Carlos Ii, Plácido de Castro, Acre
+1 Km Ramal Monte Alegre 58
+1 Km Ramal Monte Alegre 58, Plácido de Castro, Acre
+1 Km Ramal Novo Horizonte
+1 Km Ramal Novo Horizonte, Chacara, Rio Branco, Acre
+1 Km Ramal Nunes
+1 Km Ramal Nunes, Plácido de Castro, Acre
+1 Km Ramal Progeto 02
+1 Km Ramal Progeto 02, Acrelândia, Acre
+1 Km Ramal Quadra 10
+1 Km Ramal Quadra 10, Casa
+1 Km Ramal Quadra 10, Casa, Acrelândia, Acre
+1 Km Rio Acuraua
+1 Km Rio Acuraua, Casa, Tarauacá, Acre
+1 Km Rio Acuraua, Tarauacá, Acre
+1 Km Rio Purus
+1 Km Rio Purus, Casa, Santa Rosa Do Purus, Acre
+1 Km Rio Purus, Santa Rosa Do Purus, Acre
+1 Km Rodovia 475
+1 Km Rodovia 475, Outros
+1 Km Rodovia 475, Outros, Acrelândia, Acre
+1 Km Rodovia 475, Plácido de Castro, Acre
+1 Km Rodovia Ac 10
+1 Km Rodovia Ac 10, Porto Acre, Acre
+1 Km Rodovia Ac 40
+1 Km Rodovia Ac 40, Casa, Plácido de Castro, Acre
+1 Km Rodovia Ac 40, Plácido de Castro, Acre
+1 Km Rodovia Ac 475 Km 10
+1 Km Rodovia Ac 475 Km 10, Plácido de Castro, Acre
+1 Km Rodovia Br 317
+1 Km Rodovia Br 317, Porto Acre, Acre
+1 Km Rodovia Br 364
+1 Km Rodovia Br 364, Casa, Tarauacá, Acre
+1 Km Rodovia Br 364, Fazenda, Tarauacá, Acre
+1 Km Rodovia Br 364, Sena Madureira, Acre
+1 Km Rua Arueiras
+1 Km Rua Arueiras, Porto Acre, Acre
+1 Km Rua Br 307
+1 Km Rua Br 307, Casa 1, Cruzeiro Do Sul, Acre
+1 Km Rua Do Cedro
+1 Km Rua Do Cedro, Porto Acre, Acre
+1 Km Rua Ipe Roxo
+1 Km Rua Ipe Roxo, Porto Acre, Acre
+1 Km Travessa 1
+1 Km Travessa 1, Sitio
+1 Km Travessa 1, Sitio, Acrelândia, Acre
+1 Lote Rua Das Acacias
+1 Lote Rua Das Acacias, Porto Acre, Acre
+1 Loteamento Jose Peixoto
+1 Loteamento Jose Peixoto, Brasiléia, Acre
+1 Maio
+1 Maio = part of a longer name
+1 Q Avenida Castelo Branco
+1 Q Avenida Castelo Branco, Apartamento 5, Senador Guiomard, Acre
+1 Ramal 2
+1 Ramal 2, Casa, Cruzeiro Do Sul, Acre
+1 Ramal 2, Sitio, Cruzeiro Do Sul, Acre
+1 Ramal 80
+1 Ramal 80, Senador Guiomard, Acre
+1 Ramal 84
+1 Ramal 84, Box, Senador Guiomard, Acre
+1 Ramal 84, Casa 2, Senador Guiomard, Acre
+1 Ramal 84, Senador Guiomard, Acre
+1 Ramal Arnaldo
+1 Ramal Arnaldo, Casa, Feijó, Acre
+1 Ramal Assis Vasconcelo
+1 Ramal Assis Vasconcelo, Casa, Feijó, Acre
+1 Ramal Beija Flor
