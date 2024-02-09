@@ -180,11 +180,11 @@ class Server {
    * @param {number} count
    */
   async search(query, type, locations, count) {
+    this.#log(`SEARCH:`, query, type, locations, count);
     if (locations.length === 0) {
       return [];
     }
     const files = await this.#getFilePaths(type, locations);
-    this.#log(`files:`, locations, files);
     const proc = child_process.spawn("/usr/bin/rg", [
       "--crlf",
       "-H",
@@ -232,14 +232,12 @@ class Server {
     }
 
     const result = {
-      /**
-       * @type {Name[]}
-       */
+      /** @type {Name[]} */
       specificResults: [],
-      /**
-       * @type {Name[]}
-       */
+      /** @type {Name[]} */
       relatedResults: [],
+      /** @type {Name[]} */
+      extendedResults: [],
     };
 
     const numResultsLeft = () => {
@@ -249,6 +247,8 @@ class Server {
       );
     };
 
+    const relatedLocAbbrs = await this.#getRelatedLocations(params.loc);
+
     // specific search
     result.specificResults = await this.search(
       params.query,
@@ -257,14 +257,22 @@ class Server {
       numResultsLeft(),
     );
 
-    if (numResultsLeft() > 0) {
-      const relatedLocAbbrs = await this.#getRelatedLocations(params.loc);
+    // related search
+    if (relatedLocAbbrs.length > 0 && numResultsLeft() > 0) {
       result.relatedResults = await this.search(
         params.query,
         params.type,
         relatedLocAbbrs,
         numResultsLeft(),
       );
+    }
+
+    // extended search
+    if (numResultsLeft() > 0) {
+      /** @type {string[]} */
+      const alreadySearchedAbbrs = [params.loc, ...relatedLocAbbrs];
+      const remainingAbbrs = locAbbrs.filter((la) => !alreadySearchedAbbrs.includes(la));
+      result.extendedResults = await this.search(params.query, params.type, remainingAbbrs, numResultsLeft());
     }
 
     res.send(result);
