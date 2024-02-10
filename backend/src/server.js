@@ -117,12 +117,21 @@ class Server {
    */
   async #getFilePaths(type, locs) {
     const locations = await this.getLocations();
-    const filePaths = locations
+    const possibleFilePaths = locations
       .filter((l) => locs.indexOf(l.abbr) !== -1)
       .map((l) => {
         const curFileName = `${titleCase(l.abbr)}${type}.txt`;
         return path.join(l.folder, curFileName);
       });
+    const filePaths = [];
+    for (const curPath of possibleFilePaths) {
+      try {
+        await fs.access(curPath);
+        filePaths.push(curPath);
+      } catch {
+        continue;
+      }
+    }
     return filePaths;
   }
 
