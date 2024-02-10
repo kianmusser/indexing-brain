@@ -228,6 +228,10 @@ class Server {
       ...files,
     ]);
     const output = await streamToString(proc.stdout);
+    const err = await streamToString(proc.stderr);
+    if (err !== "") {
+      throw new Error(err);
+    }
     return output.split("\n").flatMap((line) => {
       const l = line.trim();
       const pieces = l.split(":");
@@ -247,6 +251,11 @@ class Server {
    * @param {import("express").Response} res
    */
   async searchHandler(req, res) {
+    /** @param{string} msg */
+    const returnError = (msg) => {
+      res.status(400);
+      res.send({ error: msg });
+    };
     const locations = await this.getLocations();
     const locAbbrs = locations.map((l) => l.abbr);
     const searchParameters = z.object({
@@ -260,8 +269,13 @@ class Server {
     try {
       params = searchParameters.parse(req.query);
     } catch (err) {
-      res.status(400);
-      res.send("invalid request");
+      console.error(err);
+      returnError("invalid request");
+      return;
+    }
+
+    if (params.query === "") {
+      returnError("blank query");
       return;
     }
 
@@ -286,12 +300,17 @@ class Server {
     const replacedQuery = await this.#performReplacements(params.query);
 
     // specific search
-    result.specificResults = await this.search(
-      replacedQuery,
-      params.type,
-      [params.loc],
-      numResultsLeft(),
-    );
+    try {
+      result.specificResults = await this.search(
+        replacedQuery,
+        params.type,
+        [params.loc],
+        numResultsLeft(),
+      );
+    } catch (err) {
+      returnError("invalid query");
+      return;
+    }
 
     // related search
     if (relatedLocAbbrs.length > 0 && numResultsLeft() > 0) {
