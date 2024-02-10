@@ -20,7 +20,8 @@
     "esModuleInterop": true,
 
     // You should also have @types/node as a devDependency in package.json
-    "types": ["node"]
+    "types": ["node"],
+    "lib": ["ES2021.String"]
   },
   "include": ["src/**/*.js", "src/**/*.d.ts"]
 }
