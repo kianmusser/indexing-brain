@@ -215,9 +215,7 @@ class Server {
    */
   async search(query, type, locations, count) {
     this.#log(`SEARCH:`, query, type, locations, count);
-    if (locations.length === 0) {
-      return [];
-    }
+    if (locations.length === 0) return [];
     const files = await this.#getFilePaths(type, locations);
     const proc = child_process.spawn("rg", [
       "--crlf",
@@ -227,12 +225,14 @@ class Server {
       query,
       ...files,
     ]);
-    const output = await streamToString(proc.stdout);
-    const err = await streamToString(proc.stderr);
-    if (err !== "") {
-      throw new Error(err);
+    const [stdout, stderr] = await Promise.all([
+      streamToString(proc.stdout),
+      streamToString(proc.stderr),
+    ]);
+    if (stderr !== "") {
+      throw new Error(stderr);
     }
-    return output.split("\n").flatMap((line) => {
+    return stdout.split("\n").flatMap((line) => {
       const l = line.trim();
       const pieces = l.split(":");
       if (pieces.length < 2) return [];
