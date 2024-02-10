@@ -27,7 +27,7 @@
         useSignalEffect,
       } from "https://esm.sh/@preact/signals@1.2.2";
 
-      const apiServer = "http://devd.io:3000";
+      const apiServer = "https://phpstack-1211178-4296221.cloudwaysapps.com"
 
       const SearchIcon = html`
         <svg
@@ -74,7 +74,7 @@
         const q = encodeURIComponent(query.value);
         const type = encodeURIComponent(nameType.value);
         const loc = encodeURIComponent(curLocation.value);
-        const url = `${apiServer}/search?query=${q}&type=${type}&loc=${loc}`;
+        const url = `${apiServer}/search/?query=${q}&type=${type}&loc=${loc}`;
 
         const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         await sleep(500);
@@ -92,7 +92,7 @@
 
       const Header = (props) => {
         useEffect(async () => {
-          const resp = await fetch(`${apiServer}/locations`);
+          const resp = await fetch(`${apiServer}/locations/`);
           const body = await resp.json();
           curLocation.value = "US";
           locations.value = body;
