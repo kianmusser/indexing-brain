@@ -185,7 +185,7 @@ class Server {
       return [];
     }
     const files = await this.#getFilePaths(type, locations);
-    const proc = child_process.spawn("/usr/bin/rg", [
+    const proc = child_process.spawn("rg", [
       "--crlf",
       "-H",
       "-m",
