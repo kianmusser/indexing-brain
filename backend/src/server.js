@@ -174,6 +174,40 @@ class Server {
   }
 
   /**
+   * @param {string} str
+   */
+  async #performReplacements(str) {
+    const replacementsFile = path.join(
+      this.#nameFolder,
+      "meta",
+      "replacements.txt",
+    );
+    const replacementsStr = await fs.readFile(replacementsFile, {
+      encoding: "utf-8",
+    });
+
+    const replacements = replacementsStr
+      .split("\n")
+      .filter((line) => line !== "" && !line.startsWith("//"))
+      .flatMap((line) => {
+        const pieces = line.split(" -> ");
+        const from = pieces[0];
+        const to = pieces[1];
+        if (from === undefined || to === undefined) {
+          return [];
+        } else {
+          return [{ from, to }];
+        }
+      });
+
+    const finalStr = replacements.reduce((prev, cur) => {
+      return prev.replaceAll(cur.from, cur.to);
+    }, str);
+
+    return finalStr;
+  }
+
+  /**
    * @param {string} query
    * @param {NameType} type
    * @param {string[]} locations
@@ -249,9 +283,11 @@ class Server {
 
     const relatedLocAbbrs = await this.#getRelatedLocations(params.loc);
 
+    const replacedQuery = await this.#performReplacements(params.query);
+
     // specific search
     result.specificResults = await this.search(
-      params.query,
+      replacedQuery,
       params.type,
       [params.loc],
       numResultsLeft(),
@@ -260,7 +296,7 @@ class Server {
     // related search
     if (relatedLocAbbrs.length > 0 && numResultsLeft() > 0) {
       result.relatedResults = await this.search(
-        params.query,
+        replacedQuery,
         params.type,
         relatedLocAbbrs,
         numResultsLeft(),
@@ -271,8 +307,15 @@ class Server {
     if (numResultsLeft() > 0) {
       /** @type {string[]} */
       const alreadySearchedAbbrs = [params.loc, ...relatedLocAbbrs];
-      const remainingAbbrs = locAbbrs.filter((la) => !alreadySearchedAbbrs.includes(la));
-      result.extendedResults = await this.search(params.query, params.type, remainingAbbrs, numResultsLeft());
+      const remainingAbbrs = locAbbrs.filter(
+        (la) => !alreadySearchedAbbrs.includes(la),
+      );
+      result.extendedResults = await this.search(
+        replacedQuery,
+        params.type,
+        remainingAbbrs,
+        numResultsLeft(),
+      );
     }
 
     res.send(result);
