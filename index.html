@@ -174,7 +174,7 @@
           });
           const copy = async () => {
             isCopied.value = true;
-            console.log("implement copy for", props.name);
+            await navigator.clipboard.writeText(props.name);
           };
           return html`
             <div class="card m-1 hstack">
