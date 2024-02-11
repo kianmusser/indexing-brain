@@ -1,6 +1,6 @@
 import { signal } from "./preact.js";
 
-const apiServer = "https://phpstack-1211178-4296221.cloudwaysapps.com";
+const apiServer = "https://ib.kianmusser.com/node";
 
 const searchParametersSignal = signal({
   nameType: signal("N"),
@@ -21,7 +21,7 @@ const searchResultsSignal = signal({
 const toastSignal = signal("Welcome to the Indexing-Brain!");
 
 const doGetLocations = async () => {
-  const resp = await fetch(`${apiServer}/locations/`);
+  const resp = await fetch(`${apiServer}/locations`);
   const body = await resp.json();
   locationsSignal.value = body;
 };
@@ -33,7 +33,7 @@ const doSearch = async () => {
   const loc = encodeURIComponent(
     searchParametersSignal.value.curLocation.value
   );
-  const url = `${apiServer}/search/?query=${q}&type=${type}&loc=${loc}`;
+  const url = `${apiServer}/search?query=${q}&type=${type}&loc=${loc}`;
 
   const resp = await fetch(url);
   const j = await resp.json();
@@ -44,9 +44,9 @@ const doSearch = async () => {
   } else {
     searchResultsSignal.value = j;
     if (
-      results.specificResults.length === 0 &&
-      results.relatedResults.length === 0 &&
-      results.extendedResults.length === 0
+      searchResultsSignal.value.relatedResults.length === 0 &&
+      searchResultsSignal.value.specificResults.length === 0 &&
+      searchResultsSignal.value.extendedResults.length === 0
     ) {
       toastSignal.value = "";
       toastSignal.value = "No results";
