@@ -9,10 +9,12 @@ import { SearchIcon } from "../icons.js";
 
 export default () => {
   let searchButton;
-  if (searchStatusSignal.value === "ok") {
+  const status = searchStatusSignal.value;
+  if (status === "ok" || status === "error") {
+    const btnBgClass = status === "ok" ? "btn-primary" : "btn-danger";
     searchButton = html`<button
       type="button"
-      class="btn btn-primary"
+      class="btn ${btnBgClass}"
       onClick=${doSearch}
     >
       ${SearchIcon}
