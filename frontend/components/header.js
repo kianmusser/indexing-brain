@@ -28,7 +28,13 @@ export default () => {
   return html`
     <nav class="row navbar navbar-expand-lg bg-secondary">
       <div class="container-fluid">
-        <form class="row">
+        <form
+          class="row"
+          onSubmit=${(e) => {
+            e.preventDefault();
+            doSearch();
+          }}
+        >
           <select
             class="col form-select"
             id="type"
