@@ -12,13 +12,20 @@ const searchStatusSignal = signal("ok"); // ok, loading, error
 const locationsSignal = signal([]);
 const errorMsgSignal = signal("");
 
-const searchResultsSignal = signal({
+const emptySearchResults = {
   specificResults: [],
   relatedResults: [],
   extendedResults: [],
-});
+};
+
+const searchResultsSignal = signal(emptySearchResults);
 
 const toastSignal = signal("Welcome to the Indexing-Brain!");
+
+function toast(msg) {
+  toastSignal.value = "";
+  toastSignal.value = msg;
+}
 
 const doGetLocations = async () => {
   const resp = await fetch(`${apiServer}/locations`);
@@ -39,8 +46,8 @@ const doSearch = async () => {
   const j = await resp.json();
   if (j.error !== undefined) {
     searchStatusSignal.value = "error";
-    errorMsgSignal.value = j.error;
-    console.log("err", resp.status);
+    searchResultsSignal.value = emptySearchResults;
+    toast(j.error);
   } else {
     searchResultsSignal.value = j;
     if (
@@ -48,8 +55,7 @@ const doSearch = async () => {
       searchResultsSignal.value.specificResults.length === 0 &&
       searchResultsSignal.value.extendedResults.length === 0
     ) {
-      toastSignal.value = "";
-      toastSignal.value = "No results";
+      toast("No results");
     }
     searchStatusSignal.value = "ok";
   }
