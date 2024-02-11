@@ -2,6 +2,13 @@ import { html, useSignal, useComputed, useSignalEffect } from "../preact.js";
 import { CopyIcon } from "../icons.js";
 import { searchResultsSignal, searchStatusSignal } from "../data.js";
 
+const Divider = (props) => html`
+  <div class="d-flex mt-2">
+    <span>${props.text}</span>
+    <hr class="ms-2 flex-grow-1" />
+  </div>
+`;
+
 export default () => {
   const createSearchResult = (props) => {
     const isCopied = useSignal(false);
@@ -31,7 +38,20 @@ export default () => {
       </div>
     `;
   };
+  const specificResults =
+    searchResultsSignal.value.specificResults.map(createSearchResult);
+  const relatedResults =
+    searchResultsSignal.value.relatedResults.map(createSearchResult);
+  const extendedResults =
+    searchResultsSignal.value.extendedResults.map(createSearchResult);
+
   return html` <div class="col-8 mx-auto">
-    ${searchResultsSignal.value.specificResults.map(createSearchResult)}
+    ${specificResults}
+    ${relatedResults.length > 0 &&
+    html`<${Divider} text="Results from related locations" />`}
+    ${relatedResults}
+    ${extendedResults.length > 0 &&
+    html`<${Divider} text="Results from all other locations" />`}
+    ${extendedResults}
   </div>`;
 };
