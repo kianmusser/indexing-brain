@@ -22,7 +22,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": {
 		"install-npm-dependencies": "cd backend && npm install",
-		"install-ripgrep": "sudo apt update && sudo apt install ripgrep"
+		"install-ripgrep": "sudo apt-get update && sudo apt-get install -y ripgrep"
 	}
 
 	// Configure tool-specific properties.
