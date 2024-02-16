@@ -1,14 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-	"name": "Node.js",
+	"name": "Go",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/go:1.22-bookworm",
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"vscodevim.vim",
-				"esbenp.prettier-vscode"
+				"vscodevim.vim"
 			]
 		}
 	},
@@ -21,7 +20,6 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": {
-		"install-npm-dependencies": "cd backend && npm install",
 		"install-ripgrep": "sudo apt-get update && sudo apt-get install -y ripgrep"
 	}
 
