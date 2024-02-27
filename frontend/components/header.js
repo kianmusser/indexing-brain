@@ -52,15 +52,16 @@ export default () => {
           </select>
 
 	<!--
-	<div class="col">
+	<div class="col"
+	<input type="text">
 		<input type="radio" name="type" id="type-names" class="btn-check">
-		<label for="type-names" class="btn btn-primary fs-3">Names</label><input type="radio" name="type" id="type-places" class="btn-check">
-		<label for="type-places" class="btn btn-primary fs-3">Places</label>
+		<input type="radio" name="type" id="type-places" class="btn-check">
 		<input type="radio" name="type" id="type-other" class="btn-check">
+		<label for="type-names" class="btn btn-primary fs-3">Names</label>
+		<label for="type-places" class="btn btn-primary fs-3">Places</label>
 		<label for="type-other" class="btn btn-primary fs-3">Other</label>
 	</div>
 	-->
-
 
           <select
             class="col form-select fs-3"
@@ -73,6 +74,8 @@ export default () => {
             <option value="P">Places</option>
             <option value="O">Other</option>
           </select>
+
+
           <div class="input-group col">
             <input
               type="text"
