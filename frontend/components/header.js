@@ -38,7 +38,32 @@ export default () => {
           }}
         >
           <select
-            class="col form-select"
+            class="col form-select fs-3"
+            id="loc"
+            value=${searchParametersSignal.value.curLocation}
+            onChange=${(e) =>
+              (searchParametersSignal.value.curLocation.value.value =
+                e.target.value)}
+          >
+            ${locationsSignal.value.map(
+              (l) =>
+                html`<option value=${l.abbr}>${l.name}</option>`
+            )}
+          </select>
+
+	<!--
+	<div class="col">
+		<input type="radio" name="type" id="type-names" class="btn-check">
+		<label for="type-names" class="btn btn-primary fs-3">Names</label><input type="radio" name="type" id="type-places" class="btn-check">
+		<label for="type-places" class="btn btn-primary fs-3">Places</label>
+		<input type="radio" name="type" id="type-other" class="btn-check">
+		<label for="type-other" class="btn btn-primary fs-3">Other</label>
+	</div>
+	-->
+
+
+          <select
+            class="col form-select fs-3"
             id="type"
             value=${searchParametersSignal.value.nameType}
             onChange=${(e) =>
@@ -48,23 +73,10 @@ export default () => {
             <option value="P">Places</option>
             <option value="O">Other</option>
           </select>
-          <select
-            class="col form-select"
-            id="loc"
-            value=${searchParametersSignal.value.curLocation}
-            onChange=${(e) =>
-              (searchParametersSignal.value.curLocation.value.value =
-                e.target.value)}
-          >
-            ${locationsSignal.value.map(
-              (l) =>
-                html`<option value=${l.abbr}>${l.abbr} - ${l.name}</option>`
-            )}
-          </select>
           <div class="input-group col">
             <input
               type="text"
-              class="form-control"
+              class="form-control fs-3"
               id="query"
               placeholder="Search"
               value=${searchParametersSignal.value.query}
