@@ -1,6 +1,6 @@
 import { signal } from "./preact.js";
 
-const apiServer = "https://ib.kianmusser.com/node";
+const apiServer = "https://indexing-brain.org/node";
 
 const searchParametersSignal = signal({
   nameType: signal("N"),
