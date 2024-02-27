@@ -42,7 +42,7 @@ export default () => {
             id="loc"
             value=${searchParametersSignal.value.curLocation}
             onChange=${(e) =>
-              (searchParametersSignal.value.curLocation.value.value =
+              (searchParametersSignal.value.curLocation.value =
                 e.target.value)}
           >
             ${locationsSignal.value.map(
