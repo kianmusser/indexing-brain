@@ -22,7 +22,21 @@ services:
       context: "./services/frontend"
       dockerfile: "Dockerfile"
     restart: "always"
+    environment:
+      - "STATIC_BACKEND_ADDRESS=https://api.${DOMAIN}"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.frontend.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.frontend.tls=true"
+
+  backend:
+    build:
+      context: "./services/backend"
+      dockerfile: "Dockerfile"
+    restart: "always"
+    volumes:
+      - "~/ib/ibnames:/names:ro"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=Host(`api.${DOMAIN}`)"
+      - "traefik.http.routers.backend.tls=true"
