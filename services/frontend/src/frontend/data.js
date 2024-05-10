@@ -10,7 +10,6 @@ const searchParametersSignal = signal({
 
 const searchStatusSignal = signal("ok"); // ok, loading, error
 const locationsSignal = signal([]);
-const errorMsgSignal = signal("");
 
 const emptySearchResults = {
   specificResults: [],
