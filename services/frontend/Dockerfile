@@ -9,7 +9,7 @@ ENTRYPOINT ["/sbin/tini", "-g", "--"]
 COPY src/ /var/www/html/
 COPY lib/ /lib/
 
-CMD ["httpd", "-f", "-h", "/var/www/html", "-p", "80", "-c", "/lib/httpd.conf"]
+CMD ["/lib/entrypoint.sh"]
 
 EXPOSE 80
 
