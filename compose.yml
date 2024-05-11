@@ -1,5 +1,6 @@
 services:
   traefik:
+    hostname: "ib-traefik"
     image: "traefik:v3.0"
     command:
       - "--providers.docker"
@@ -18,25 +19,110 @@ services:
     restart: "always"
 
   frontend:
+    hostname: "ib-frontend"
     build:
       context: "./services/frontend"
       dockerfile: "Dockerfile"
     restart: "always"
     environment:
-      - "STATIC_BACKEND_ADDRESS=https://api.${DOMAIN}"
+      STATIC_BACKEND_ADDRESS: "https://api.${DOMAIN}"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.frontend.rule=Host(`frontend.${DOMAIN}`)"
       - "traefik.http.routers.frontend.tls=true"
 
   backend:
+    hostname: "ib-backend"
     build:
       context: "./services/backend"
       dockerfile: "Dockerfile"
     restart: "always"
     volumes:
-      - "~/ib/ibnames:/names:ro"
+      - "ib-names:/names:ro"
+      - "ib-keylets:/keylets:ro"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=Host(`api.${DOMAIN}`)"
       - "traefik.http.routers.backend.tls=true"
+
+  # wordpress source: https://github.com/docker/awesome-compose/blob/master/wordpress-mysql/compose.yaml
+  wp-mariadb:
+    hostname: "ib-wp-mariadb"
+    image: mariadb:10.6.4-focal
+    command: "--default-authentication-plugin=mysql_native_password"
+    volumes:
+      - wp_db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    expose:
+      - 3306
+
+  wordpress:
+    hostname: "ib-wordpress"
+    image: wordpress:latest
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wordpress.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.wordpress.tls=true"
+    volumes:
+      - "wp_data:/var/www/html/wp-content"
+    environment:
+      WORDPRESS_DB_HOST: wp-mariadb
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'https://${DOMAIN}');
+        define('WP_SITEURL', 'https://${DOMAIN}');
+
+  # FIXME: set the volumes to :ro once initial move is complete?
+  restic:
+    hostname: "ib-restic"
+    build:
+      context: "./services/restic"
+      dockerfile: "Dockerfile"
+    restart: always
+    volumes:
+      - "./services/restic/creds.json:/creds.json:ro"
+      - "restic-cache:/cache"
+      - "wp_data:/volumes/wp-data"
+      - "wp_db_data:/volumes/wp-db-data"
+      - "ib-names:/volumes/ib-names"
+      - "ib-keylets:/volumes/ib-keylets"
+      - "syncthing-config:/volumes/syncthing-config"
+    environment:
+      RESTIC_REPOSITORY: ${RESTIC_REPOSITORY}
+      RESTIC_PASSWORD: ${RESTIC_PASSWORD}
+      RESTIC_CACHE_DIR: /cache
+      GOOGLE_PROJECT_ID: ${GOOGLE_PROJECT_ID}
+      GOOGLE_APPLICATION_CREDENTIALS: /creds.json
+
+  syncthing:
+    image: syncthing/syncthing:latest
+    hostname: "ib-syncthing"
+    ports:
+      - 8384:8384
+      - 22000:22000/tcp
+      - 22000:22000/udp
+      - 21027:21027/udp
+    volumes:
+      - "ib-names:/var/syncthing/names"
+      - "ib-keylets:/var/syncthing/keylets"
+      - "syncthing-config:/var/syncthing/config"
+    environment:
+      PUID: 1000
+      GUID: 1000
+    restart: always
+
+volumes:
+  wp_db_data:
+  wp_data:
+  restic-cache:
+  ib-names:
+  ib-keylets:
+  syncthing-config:
