@@ -31,6 +31,19 @@ services:
       - "traefik.http.routers.frontend.rule=Host(`frontend.${DOMAIN}`)"
       - "traefik.http.routers.frontend.tls=true"
 
+  images:
+    hostname: "ib-images"
+    build:
+      context: "./services/images"
+      dockerfile: "Dockerfile"
+    restart: always
+    volumes:
+      - "ib-keylets:/var/www/html:ro"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.images.rule=Host(`images.${DOMAIN}`)"
+      - "traefik.http.routers.images.tls=true"
+
   backend:
     hostname: "ib-backend"
     build:
@@ -80,7 +93,6 @@ services:
         define('WP_HOME', 'https://${DOMAIN}');
         define('WP_SITEURL', 'https://${DOMAIN}');
 
-  # FIXME: set the volumes to :ro once initial move is complete?
   restic:
     hostname: "ib-restic"
     build:
@@ -103,6 +115,7 @@ services:
       GOOGLE_APPLICATION_CREDENTIALS: /creds.json
 
   syncthing:
+    profiles: [doNotStart]
     image: syncthing/syncthing:latest
     hostname: "ib-syncthing"
     ports:
