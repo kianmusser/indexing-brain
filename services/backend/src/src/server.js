@@ -50,16 +50,20 @@ class Server {
   #app;
   #port;
   #nameFolder;
+  #keyletFolder;
   #maxResults;
+
   /**
    *
    * @param {number} port
    * @param {string} nameFolder
+   * @param {string} keyletFolder
    */
-  constructor(port, nameFolder) {
+  constructor(port, nameFolder, keyletFolder) {
     this.#app = express();
     this.#port = port;
     this.#nameFolder = nameFolder;
+    this.#keyletFolder = keyletFolder;
     this.#maxResults = 100;
 
     this.#app.use(cors());
@@ -67,6 +71,7 @@ class Server {
     this.#app.get("/", this.indexHandler.bind(this));
     this.#app.get("/locations", this.locationHandler.bind(this));
     this.#app.get("/search", this.searchHandler.bind(this));
+    this.#app.get("/keylets", this.keyletHandler.bind(this));
   }
 
   /**
@@ -97,8 +102,13 @@ class Server {
     return locations;
   }
 
+  async getKeylets() {
+    const files = await fs.readdir(this.#keyletFolder, { withFileTypes: true });
+    const keylets = files.filter((f) => f.isFile());
+    return keylets;
+  }
+
   /**
-   *
    * @param {import("express").Request} req
    * @param {import("express").Response} res
    */
@@ -109,6 +119,12 @@ class Server {
       return { abbr, name };
     });
     res.send(locationsNoFolder);
+  }
+
+  async keyletHandler(req, res) {
+    const keylets = await this.getKeylets();
+    const keyletFileNames = keylets.map((k) => k.name);
+    res.send(keyletFileNames);
   }
 
   /**
@@ -357,6 +373,7 @@ class Server {
   run() {
     this.#app.listen(this.#port, () => {
       this.#log(`name folder ${this.#nameFolder}`);
+      this.#log(`keylet folder ${this.#keyletFolder}`);
       this.#log(`listening on port ${this.#port}`);
     });
   }
