@@ -56,13 +56,16 @@ const Header: FC = () => {
             {locationOptions.value}
           </Form.Select>
         </Form.Group>
-        <Form.Group controlId="formType" className="me-2 d-flex flex-row align-items-center">
+        <Form.Group
+          controlId="formType"
+          className="me-2 d-flex flex-row align-items-center"
+        >
           <Form.Check
             type="radio"
             name="type"
             id="type-names"
             label="Names"
-            checked={searchParametersSignal.value.nameType === "N"}
+            checked={searchParametersSignal.value.nameType.value === "N"}
             onChange={() => (searchParametersSignal.value.nameType.value = "N")}
             className="me-2"
           />
@@ -71,7 +74,7 @@ const Header: FC = () => {
             name="type"
             id="type-places"
             label="Places"
-            checked={searchParametersSignal.value.nameType === "P"}
+            checked={searchParametersSignal.value.nameType.value === "P"}
             onChange={() => (searchParametersSignal.value.nameType.value = "P")}
             className="me-2"
           />
@@ -80,20 +83,24 @@ const Header: FC = () => {
             name="type"
             id="type-other"
             label="Other"
-            checked={searchParametersSignal.value.nameType === "O"}
+            checked={searchParametersSignal.value.nameType.value === "O"}
             onChange={() => (searchParametersSignal.value.nameType.value = "O")}
             className="me-2"
           />
         </Form.Group>
-        <Form.Group controlId="formQuery" className="me-2 d-flex flex-row align-items-center">
+        <Form.Group
+          controlId="formQuery"
+          className="me-2 d-flex flex-row align-items-center"
+        >
           <Form.Control
             type="text"
             placeholder="Search"
             size="lg"
-            value={searchParametersSignal.value.query}
-            onChange={(e) =>
-              (searchParametersSignal.value.query.value = e.target.value)
-            }
+            value={searchParametersSignal.value.query.value}
+            onChange={(e) => {
+              // @ts-ignore
+              searchParametersSignal.value.query.value = e.target.value;
+            }}
             className="me-2"
           />
           <button
@@ -103,7 +110,6 @@ const Header: FC = () => {
           >
             {searchButtonVariant.value === "warning" ? (
               <Spinner
-                as="span"
                 animation="border"
                 size="sm"
                 role="status"
