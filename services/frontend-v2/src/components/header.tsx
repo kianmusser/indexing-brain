@@ -37,14 +37,15 @@ const Header: FC = () => {
   });
 
   return (
-    <Nav>
+    <Nav className="d-flex flex-row">
       <Form
+        className="d-flex flex-row align-items-center"
         onSubmit={(e) => {
           e.preventDefault();
           doSearch();
         }}
       >
-        <Form.Group as={Row} controlId="formLocation">
+        <Form.Group controlId="formLocation" className="me-2">
           <Form.Select
             size="lg"
             value={searchParametersSignal.value.curLocation}
@@ -55,7 +56,7 @@ const Header: FC = () => {
             {locationOptions.value}
           </Form.Select>
         </Form.Group>
-        <Form.Group as={Row} controlId="formType">
+        <Form.Group controlId="formType" className="me-2 d-flex flex-row align-items-center">
           <Form.Check
             type="radio"
             name="type"
@@ -63,6 +64,7 @@ const Header: FC = () => {
             label="Names"
             checked={searchParametersSignal.value.nameType === "N"}
             onChange={() => (searchParametersSignal.value.nameType.value = "N")}
+            className="me-2"
           />
           <Form.Check
             type="radio"
@@ -71,6 +73,7 @@ const Header: FC = () => {
             label="Places"
             checked={searchParametersSignal.value.nameType === "P"}
             onChange={() => (searchParametersSignal.value.nameType.value = "P")}
+            className="me-2"
           />
           <Form.Check
             type="radio"
@@ -79,9 +82,10 @@ const Header: FC = () => {
             label="Other"
             checked={searchParametersSignal.value.nameType === "O"}
             onChange={() => (searchParametersSignal.value.nameType.value = "O")}
+            className="me-2"
           />
         </Form.Group>
-        <Form.Group as={Row} controlId="formQuery">
+        <Form.Group controlId="formQuery" className="me-2 d-flex flex-row align-items-center">
           <Form.Control
             type="text"
             placeholder="Search"
@@ -90,6 +94,7 @@ const Header: FC = () => {
             onChange={(e) =>
               (searchParametersSignal.value.query.value = e.target.value)
             }
+            className="me-2"
           />
           <button
             type="button"
