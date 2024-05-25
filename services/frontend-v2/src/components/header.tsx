@@ -7,7 +7,7 @@ import {
 
 import { BsSearch } from "react-icons/bs";
 import { Form, Nav, Row, Spinner } from "react-bootstrap";
-import { useComputed } from "@preact/signals";
+import { useComputed } from "@preact/signals-react";
 
 import { FC } from "react";
 
@@ -29,8 +29,8 @@ const Header: FC = () => {
   });
 
   const locationOptions = useComputed(() => {
-    return locationsSignal.value.map((l) => (
-      <option value={l.abbr}>{l.name}</option>
+    return locationsSignal.value.map((l: Location) => (
+      <option key={l.abbr} value={l.abbr}>{l.name}</option>
     ));
   });
 
@@ -50,7 +50,7 @@ const Header: FC = () => {
               (searchParametersSignal.value.curLocation.value = e.target.value)
             }
           >
-            {locationOptions}
+            {locationOptions.value}
           </Form.Select>
         </Form.Group>
         <Form.Group as={Row} controlId="formType">
@@ -106,6 +106,7 @@ const Header: FC = () => {
               <BsSearch />
             )}
           </button>
+        </Form.Group>
       </Form>
     </Nav>
   );
