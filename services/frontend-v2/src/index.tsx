@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/header";
 import SearchResults from "./components/searchResults";
 import { useEffect } from "preact/hooks";
+import Toaster from "./components/toaster";
 import { doGetLocations } from "./data";
 
 export function App() {
@@ -16,7 +17,7 @@ export function App() {
       <Header />
       <div class="flex-grow-1 row bg-body-tertiary">
         <SearchResults />
-        <p>toaster</p>
+        <Toaster />
       </div>
     </div>
   );
