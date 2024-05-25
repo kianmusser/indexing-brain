@@ -10,5 +10,5 @@ RUN npm ci
 COPY src/ /app
 
 ENTRYPOINT ["/sbin/tini", "-g", "--"]
-CMD ["node", "src/index.js", "/names"]
+CMD ["node", "src/index.js", "/names", "/keylets"]
 EXPOSE 3000
