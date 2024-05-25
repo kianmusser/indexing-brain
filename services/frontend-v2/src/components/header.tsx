@@ -7,7 +7,7 @@ import {
 
 import { BsSearch } from "react-icons/bs";
 import { Form, Nav, Row, Spinner } from "react-bootstrap";
-import { useComputed } from "@preact/signals-react";
+import { useComputed } from "@preact/signals";
 
 import { FC } from "react";
 
@@ -30,7 +30,9 @@ const Header: FC = () => {
 
   const locationOptions = useComputed(() => {
     return locationsSignal.value.map((l: Location) => (
-      <option key={l.abbr} value={l.abbr}>{l.name}</option>
+      <option key={l.abbr} value={l.abbr}>
+        {l.name}
+      </option>
     ));
   });
 
