@@ -94,6 +94,7 @@ services:
         define('WP_SITEURL', 'https://${DOMAIN}');
 
   restic:
+    profiles: [doNotStart]
     hostname: "ib-restic"
     build:
       context: "./services/restic"

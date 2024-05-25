@@ -6,12 +6,7 @@ import {
 } from "../data";
 
 import { BsSearch } from "react-icons/bs";
-import {
-  Form,
-  Nav,
-  Row,
-  Spinner,
-} from "react-bootstrap";
+import { Form, Nav, Row, Spinner } from "react-bootstrap";
 import { useComputed } from "@preact/signals";
 
 import { FC } from "react";
@@ -55,7 +50,7 @@ const Header: FC = () => {
               (searchParametersSignal.value.curLocation.value = e.target.value)
             }
           >
-            {locationOptions()}
+            {locationOptions}
           </Form.Select>
         </Form.Group>
         <Form.Group as={Row}>
@@ -64,5 +59,6 @@ const Header: FC = () => {
       </Form>
     </Nav>
   );
-}
+};
 
+export default Header;

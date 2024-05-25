@@ -1,0 +1,23 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@preact/signals": "^1.2.3",
+		"bootstrap": "^5.3.3",
+		"preact": "^10.20.0",
+		"preact-iso": "^2.6.2",
+		"preact-render-to-string": "^6.4.2",
+		"react-bootstrap": "^2.10.2",
+		"react-icons": "^5.2.1"
+	},
+	"devDependencies": {
+		"@preact/preset-vite": "^2.8.2",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.2"
+	}
+}
