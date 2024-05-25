@@ -17,7 +17,14 @@ import {
 } from "react-bootstrap";
 import { useComputed } from "@preact/signals";
 
-export default function Header() {
+import { FC } from "react";
+
+interface Location {
+  abbr: string;
+  name: string;
+}
+
+const Header: FC = () => {
   const searchButtonVariant = useComputed(() => {
     switch (searchStatusSignal.value) {
       case "ok":
@@ -51,7 +58,7 @@ export default function Header() {
               (searchParametersSignal.value.curLocation.value = e.target.value)
             }
           >
-            {locationOptions}
+            {locationOptions()}
           </Form.Select>
         </Form.Group>
         <Form.Group as={Row}>
@@ -62,47 +69,3 @@ export default function Header() {
   );
 }
 
-/*
-	<div class="col"
-	<input type="text">
-		<input type="radio" name="type" id="type-names" class="btn-check">
-		<input type="radio" name="type" id="type-places" class="btn-check">
-		<input type="radio" name="type" id="type-other" class="btn-check">
-		<label for="type-names" class="btn btn-primary fs-3">Names</label>
-		<label for="type-places" class="btn btn-primary fs-3">Places</label>
-		<label for="type-other" class="btn btn-primary fs-3">Other</label>
-	</div>
-
-          <select
-            class="col form-select fs-3"
-            id="type"
-            value={searchParametersSignal.value.nameType}
-            onChange={(e) =>
-              (searchParametersSignal.value.nameType.value = e.target.value)
-            }
-          >
-            <option value="N">Names</option>
-            <option value="P">Places</option>
-            <option value="O">Other</option>
-          </select>
-
-          <div class="input-group col">
-            <input
-              type="text"
-              class="form-control fs-3"
-              id="query"
-              placeholder="Search"
-              value={searchParametersSignal.value.query}
-              onInput={(e) =>
-                (searchParametersSignal.value.query.value = e.target.value)
-              }
-            />
-            <Button variant={searchButtonVariant.value} onClick={doSearch}>
-              {searchButtonVariant.value === "warning" ? (
-                <Spinner size="sm" />
-              ) : (
-                <BsSearch />
-              )}
-            </Button>
-          </div>
-          */
