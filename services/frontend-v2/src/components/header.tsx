@@ -53,9 +53,59 @@ const Header: FC = () => {
             {locationOptions}
           </Form.Select>
         </Form.Group>
-        <Form.Group as={Row}>
-          <Form.Check type="radio" label="Names"></Form.Check>
+        <Form.Group as={Row} controlId="formType">
+          <Form.Check
+            type="radio"
+            name="type"
+            id="type-names"
+            label="Names"
+            checked={searchParametersSignal.value.nameType === "N"}
+            onChange={() => (searchParametersSignal.value.nameType.value = "N")}
+          />
+          <Form.Check
+            type="radio"
+            name="type"
+            id="type-places"
+            label="Places"
+            checked={searchParametersSignal.value.nameType === "P"}
+            onChange={() => (searchParametersSignal.value.nameType.value = "P")}
+          />
+          <Form.Check
+            type="radio"
+            name="type"
+            id="type-other"
+            label="Other"
+            checked={searchParametersSignal.value.nameType === "O"}
+            onChange={() => (searchParametersSignal.value.nameType.value = "O")}
+          />
         </Form.Group>
+        <Form.Group as={Row} controlId="formQuery">
+          <Form.Control
+            type="text"
+            placeholder="Search"
+            size="lg"
+            value={searchParametersSignal.value.query}
+            onChange={(e) =>
+              (searchParametersSignal.value.query.value = e.target.value)
+            }
+          />
+          <button
+            type="button"
+            className={`btn btn-${searchButtonVariant.value}`}
+            onClick={doSearch}
+          >
+            {searchButtonVariant.value === "warning" ? (
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+            ) : (
+              <BsSearch />
+            )}
+          </button>
       </Form>
     </Nav>
   );
